@@ -292,7 +292,7 @@
 /** Top header 2 area start **/
 #top-header-2 {
     background-color: #0c47a9!important;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;

@@ -24,7 +24,7 @@ export default function Header() {
             <div className="main-header sticky-header header-with-top" id="main-header-4">
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="header-left">
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </div>
                     <button className="navbar-toggler" id="drawer" type="button">
                         <span className="fa fa-bars"></span>
@@ -32,7 +32,7 @@ export default function Header() {
                     <div className="header-centar">
                         <div className="navbar-collapse collapse" id="navbar">
                             <ul className="navbar-nav">
-                                <li className="nav-item dropdown active">
+                                <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Home
