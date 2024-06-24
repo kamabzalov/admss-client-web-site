@@ -296,7 +296,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    min-height: 50px;
+    height: 150px;
     z-index: 9999;
     border-bottom: none;
 }
