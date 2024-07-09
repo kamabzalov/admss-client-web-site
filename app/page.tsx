@@ -31,24 +31,21 @@ export default function Page() {
                                                     <li className="selected active">
                                                         <a
                                                             className="dropdown-item active selected"
-                                                            id="bs-select-2-0"
-                                                            aria-setsize="5"
-                                                            aria-posinset="1"
-                                                            aria-selected="true">
+                                                            id="bs-select-2-0">
                                                             <span
                                                                 className="text">Select Make</span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a className="dropdown-item" id="bs-select-2-1"
-                                                           aria-setsize="5" aria-posinset="2"><span
-                                                            className="text">BMW</span></a></li>
-                                                    <li><a role="option" className="dropdown-item" id="bs-select-2-2"
-                                                           aria-setsize="5" aria-posinset="3"><span
+                                                        <a className="dropdown-item" id="bs-select-2-1"><span
+                                                            className="text">BMW</span></a>
+                                                    </li>
+                                                    <li><a className="dropdown-item" id="bs-select-2-2"
+                                                    ><span
                                                         className="text">Honda</span></a></li>
                                                     <li>
                                                         <a className="dropdown-item" id="bs-select-2-3"
-                                                           aria-setsize="5" aria-posinset="4"><span
+                                                        ><span
                                                             className="text">Lamborghini</span></a></li>
                                                     <li>
                                                         <a className="dropdown-item"
@@ -88,20 +85,18 @@ export default function Page() {
                                                         <a
                                                             className="dropdown-item active selected"
                                                             id="bs-select-2-0"
-                                                            aria-setsize="5"
-                                                            aria-posinset="1"
-                                                            aria-selected="true"><span
+                                                        ><span
                                                             className="text">Select Make</span></a></li>
                                                     <li>
                                                         <a className="dropdown-item" id="bs-select-2-1"
-                                                           aria-setsize="5" aria-posinset="2"><span
+                                                        ><span
                                                             className="text">BMW</span></a></li>
                                                     <li><a role="option" className="dropdown-item" id="bs-select-2-2"
-                                                           aria-setsize="5" aria-posinset="3"><span
+                                                    ><span
                                                         className="text">Honda</span></a></li>
                                                     <li>
                                                         <a className="dropdown-item" id="bs-select-2-3"
-                                                           aria-setsize="5" aria-posinset="4"><span
+                                                        ><span
                                                             className="text">Lamborghini</span></a></li>
                                                     <li>
                                                         <a className="dropdown-item"
@@ -136,12 +131,10 @@ export default function Page() {
                                                  aria-activedescendant="bs-select-3-0">
                                                 <ul className="dropdown-menu inner show" role="presentation">
                                                     <li className="selected active">
-                                                        <a role="option"
-                                                           className="dropdown-item active selected"
-                                                           id="bs-select-3-0"
-                                                           aria-setsize="3"
-                                                           aria-posinset="1"
-                                                           aria-selected="true"><span
+                                                        <a
+                                                            className="dropdown-item active selected"
+                                                            id="bs-select-3-0"
+                                                            aria-selected="true"><span
                                                             className="text">Select Location</span></a></li>
                                                     <li><a className="dropdown-item" id="bs-select-3-1"
                                                     ><span className="text">United States</span></a>
