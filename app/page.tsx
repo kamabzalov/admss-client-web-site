@@ -12,6 +12,7 @@ async function getData() {
 
 export default async function Page() {
     const data = await getData();
+    console.log(data);
     return (
         <>
             <div className="search-box-3 content-area">
@@ -836,7 +837,8 @@ export default async function Page() {
                                     <div className="latest-offers-box">
                                         <div className="photo-overflow">
                                             <div className="car-thumbnail-photo">
-                                                <img className="img-fluid w-100" src="img/car/car-4.png" alt="photo"/>
+                                                <img className="img-fluid w-100" src="/assets/img/car-4.png"
+                                                     alt="photo"/>
                                             </div>
                                         </div>
                                         <div className="new">New</div>
@@ -854,7 +856,8 @@ export default async function Page() {
                                     <div className="latest-offers-box">
                                         <div className="photo-overflow">
                                             <div className="car-thumbnail-photo">
-                                                <img className="img-fluid w-100" src="img/car/car-6.png" alt="photo"/>
+                                                <img className="img-fluid w-100" src="/assets/img/car-6.png"
+                                                     alt="photo"/>
                                             </div>
                                         </div>
                                         <div className="new">New</div>
@@ -874,7 +877,7 @@ export default async function Page() {
                             <div className="latest-offers-box">
                                 <div className="photo-overflow">
                                     <div className="car-thumbnail-photo">
-                                        <img className="img-fluid w-100" src="img/car/car-11.png" alt="photo"/>
+                                        <img className="img-fluid w-100" src="/assets/img/car-11.png" alt="photo"/>
                                     </div>
                                 </div>
                                 <div className="new">New</div>
@@ -894,7 +897,8 @@ export default async function Page() {
                                     <div className="latest-offers-box">
                                         <div className="photo-overflow">
                                             <div className="car-thumbnail-photo">
-                                                <img className="img-fluid w-100" src="img/car/car-1.png" alt="photo"/>
+                                                <img className="img-fluid w-100" src="/assets/img/car-1.png"
+                                                     alt="photo"/>
                                             </div>
                                         </div>
                                         <div className="new">New</div>
@@ -912,7 +916,8 @@ export default async function Page() {
                                     <div className="latest-offers-box">
                                         <div className="photo-overflow">
                                             <div className="car-thumbnail-photo">
-                                                <img className="img-fluid w-100" src="" alt="photo"/>
+                                                <img className="img-fluid w-100" src="/assets/img/car-2.png"
+                                                     alt="photo"/>
                                             </div>
                                         </div>
                                         <div className="new">New</div>
@@ -947,7 +952,7 @@ export default async function Page() {
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                             <div className="team-3">
                                 <div className="thumb">
-                                    <img src="" alt="agent" className="img-fluid"/>
+                                    <img src="/assets/img/avatar-1.png" alt="agent" className="img-fluid"/>
                                     <ul>
                                         <li>
                                             <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
@@ -961,7 +966,7 @@ export default async function Page() {
                                     </ul>
                                 </div>
                                 <div className="info">
-                                    <h5><a href="/">Michelle Nelson</a></h5>
+                                <h5><a href="/">Michelle Nelson</a></h5>
                                     <p>Support Manager</p>
                                 </div>
                             </div>
@@ -969,9 +974,9 @@ export default async function Page() {
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                             <div className="team-3">
                                 <div className="thumb">
-                                    <img src="" alt="agent" className="img-fluid"/>
+                                    <img src="/assets/img/avatar-2.png" alt="agent" className="img-fluid"/>
                                     <ul>
-                                        <li>
+                                    <li>
                                             <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
                                         </li>
                                         <li>
@@ -991,7 +996,7 @@ export default async function Page() {
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                             <div className="team-3">
                                 <div className="thumb">
-                                    <img src="img/avatar/avatar-11.png" alt="agent" className="img-fluid"/>
+                                    <img src="/assets/img/avatar-3.png" alt="agent" className="img-fluid"/>
                                     <ul>
                                         <li>
                                             <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
@@ -1013,7 +1018,7 @@ export default async function Page() {
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                             <div className="team-3">
                                 <div className="thumb">
-                                    <img src="" alt="agent" className="img-fluid"/>
+                                    <img src="/assets/img/avatar-4.png" alt="agent" className="img-fluid"/>
                                     <ul>
                                         <li>
                                             <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
@@ -1027,7 +1032,7 @@ export default async function Page() {
                                     </ul>
                                 </div>
                                 <div className="info">
-                                    <h5><a href="/">Brandon Miller</a></h5>
+                                <h5><a href="/">Brandon Miller</a></h5>
                                     <p>Manager</p>
                                 </div>
                             </div>

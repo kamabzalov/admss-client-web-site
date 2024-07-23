@@ -601,14 +601,11 @@
 }
 
 #main-header-4 .contact-now .left{
-    width: 55px;
-    height: 55px;
     line-height: 55px;
     border-radius: 100px;
     text-align: center;
     font-size: 30px;
     color: #fff;
-    background-color: #0c47a9;
 }
 
 #main-header-4 .contact-now .right {

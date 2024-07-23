@@ -10,17 +10,17 @@ export default function Footer() {
                             </h4>
                             <ul className="contact-info">
                                 <li>
-                                    <i className="flaticon-pin"></i>20/F Green Road, Dhanmondi, Dhaka
+                                    20/F Green Road, Dhanmondi, Dhaka
                                 </li>
                                 <li>
-                                    <i className="flaticon-mail"></i><a
-                                    href="mailto:sales@hotelempire.com">info@themevessel.com</a>
+                                    <a
+                                        href="mailto:sales@hotelempire.com">info@themevessel.com</a>
                                 </li>
                                 <li>
-                                    <i className="flaticon-phone"></i><a href="tel:+55-417-634-7071">+0477 85X6 552</a>
+                                    <a href="tel:+55-417-634-7071">+0477 85X6 552</a>
                                 </li>
                                 <li>
-                                    <i className="flaticon-fax"></i>+0477 85X6 552
+                                    +0477 85X6 552
                                 </li>
                             </ul>
                             <div className="clearfix"></div>
@@ -72,40 +72,43 @@ export default function Footer() {
                             <h4>Recent Posts</h4>
                             <div className="d-flex mb-4 recent-posts-box">
                                 <a href="car-details.html">
-                                    <img className="flex-shrink-0 me-3" src="img/car/small-car-3.png" alt="small-car"/>
+                                    <img className="flex-shrink-0 me-3" src="/assets/img/small-car-3.png"
+                                         alt="small-car"/>
                                 </a>
                                 <div className="detail align-self-center">
                                     <h5>
                                         <a href="car-details.html">Bentley Continental GT</a>
                                     </h5>
                                     <div className="listing-post-meta">
-                                        $345,00 | <a href="#"><i className="fa fa-calendar"></i> Jan 12, 2021</a>
+                                        $345,00 | <a href="#">Jan 12, 2021</a>
                                     </div>
                                 </div>
                             </div>
                             <div className="d-flex mb-4 recent-posts-box">
                                 <a href="car-details.html">
-                                    <img className="flex-shrink-0 me-3" src="img/car/small-car-1.png" alt="small-car"/>
+                                    <img className="flex-shrink-0 me-3" src="/assets/img/small-car-1.png"
+                                         alt="small-car"/>
                                 </a>
                                 <div className="detail align-self-center">
                                     <h5>
                                         <a href="car-details.html">Fiat Punto Red</a>
                                     </h5>
                                     <div className="listing-post-meta">
-                                        $345,00 | <a href="#"><i className="fa fa-calendar"></i> Aug 24, 2021</a>
+                                        $345,00 | <a href="#">Aug 24, 2021</a>
                                     </div>
                                 </div>
                             </div>
                             <div className="d-flex recent-posts-box">
                                 <a href="car-details.html">
-                                    <img className="flex-shrink-0 me-3" src="img/car/small-car-2.png" alt="small-car"/>
+                                    <img className="flex-shrink-0 me-3" src="/assets/img/small-car-2.png"
+                                         alt="small-car"/>
                                 </a>
                                 <div className="detail align-self-center">
                                     <h5>
                                         <a href="car-details.html">Nissan Micra Gen5</a>
                                     </h5>
                                     <div className="listing-post-meta">
-                                        $345,00 | <a href="#"><i className="fa fa-calendar"></i> Sep 24, 2021</a>
+                                        $345,00 | <a href="#">Sep 24, 2021</a>
                                     </div>
                                 </div>
                             </div>

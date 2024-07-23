@@ -5,17 +5,17 @@ export default function Header() {
                 <div className="row">
                     <div className="col-lg-8 col-md-8 col-sm-7 col-7">
                         <div className="list-inline">
-                            <a href="#"><i className="fa fa-map-marker"></i> 121 King Street, Melbourne</a>
-                            <a href="tel:info@themevessel.com" className="d-none-768"><i className="fa fa-envelope"></i>info@themevessel.com</a>
+                            <a href="#"> 121 King Street, Melbourne</a>
+                            <a href="tel:info@themevessel.com" className="d-none-768">info@themevessel.com</a>
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-5 col-5">
                         <ul className="top-social-media pull-right">
                             <li>
-                                <a href="#" className="sign-in"><i className="fa fa-sign-in"></i> Login</a>
+                                <a href="#" className="sign-in">Login</a>
                             </li>
                             <li>
-                                <a href="#" className="sign-in"><i className="fa fa-user"></i> Register</a>
+                                <a href="#" className="sign-in">Register</a>
                             </li>
                         </ul>
                     </div>
@@ -46,9 +46,7 @@ export default function Header() {
                     </div>
                     <div className="header-right">
                         <div className="contact-now">
-                            <div className="left">
-                                <i className="fa fa-phone"></i>
-                            </div>
+                            <div className="left"></div>
                             <div className="right">
                                 <h5>Call Free</h5>
                                 <h4><a href="tel:+55-4XX-634-7071">+01-325-2184</a></h4>
