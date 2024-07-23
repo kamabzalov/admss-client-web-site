@@ -769,7 +769,7 @@ export default async function Page() {
                                         <a href="services.html">Highly Secured</a>
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the</p>
+                                        Ipsum has been the industry standard dummy text ever since the</p>
                                 </div>
                             </div>
                         </div>
@@ -783,7 +783,7 @@ export default async function Page() {
                                         <a href="services.html">Trusted Agents</a>
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the</p>
+                                        Ipsum has been the industrys standard dummy text ever since the</p>
                                 </div>
                             </div>
                         </div>
@@ -797,7 +797,7 @@ export default async function Page() {
                                         <a href="services.html">Get an Offer</a>
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the</p>
+                                        Ipsum has been the industrys standard dummy text ever since the</p>
                                 </div>
                             </div>
                         </div>
@@ -811,7 +811,7 @@ export default async function Page() {
                                         <a href="/">Free Support</a>
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the</p>
+                                        Ipsum has been the industrys standard dummy text ever since the</p>
                                 </div>
                             </div>
                         </div>
