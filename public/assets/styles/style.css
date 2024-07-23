@@ -4565,7 +4565,7 @@ input[type=checkbox]:checked + label:before {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    background-image: url("/assets/img/img-2.png");
+    background-image: url('/assets/img/img-2.png');
 }
 
 .footer:before {

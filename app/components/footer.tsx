@@ -119,7 +119,7 @@ export default function Footer() {
                             <h4>Subscribe</h4>
                             <div className="Subscribe-box">
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the</p>
+                                    Ipsum has been the industrys standard dummy text ever since the</p>
                             </div>
                         </div>
                     </div>
