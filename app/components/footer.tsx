@@ -79,7 +79,7 @@ export default function Footer() {
                                 </a>
                                 <div className="detail align-self-center">
                                     <h5>
-                                        <a href="car-details.html">Bentley Continental GT</a>
+                                        <a href="/">Bentley Continental GT</a>
                                     </h5>
                                     <div className="listing-post-meta">
                                         $345,00 | <a href="#">Jan 12, 2021</a>
