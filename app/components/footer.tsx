@@ -72,8 +72,10 @@ export default function Footer() {
                             <h4>Recent Posts</h4>
                             <div className="d-flex mb-4 recent-posts-box">
                                 <a href="car-details.html">
-                                    <img className="flex-shrink-0 me-3" src="/assets/img/small-car-3.png"
-                                         alt="small-car"/>
+                                    <img
+                                        src="/img/small-car-3.png"
+                                        alt="Picture of the author"
+                                    />
                                 </a>
                                 <div className="detail align-self-center">
                                     <h5>
@@ -86,7 +88,7 @@ export default function Footer() {
                             </div>
                             <div className="d-flex mb-4 recent-posts-box">
                                 <a href="car-details.html">
-                                    <img className="flex-shrink-0 me-3" src="/assets/img/small-car-1.png"
+                                    <img className="flex-shrink-0 me-3" src="/img/small-car-1.png"
                                          alt="small-car"/>
                                 </a>
                                 <div className="detail align-self-center">
@@ -100,7 +102,7 @@ export default function Footer() {
                             </div>
                             <div className="d-flex recent-posts-box">
                                 <a href="car-details.html">
-                                    <img className="flex-shrink-0 me-3" src="/assets/img/small-car-2.png"
+                                    <img className="flex-shrink-0 me-3" src="/img/small-car-2.png"
                                          alt="small-car"/>
                                 </a>
                                 <div className="detail align-self-center">
