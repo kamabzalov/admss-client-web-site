@@ -6,19 +6,19 @@
 
 }
 
-.jnoty-info .jnoty-content .jnoty-header span{
+.jnoty-info .jnoty-content .jnoty-header span {
     color: #00B8D9 !important;
 }
 
-.jnoty-success .jnoty-content .jnoty-header span{
+.jnoty-success .jnoty-content .jnoty-header span {
     color: #36B37E !important;;
 }
 
-.jnoty-warning .jnoty-content .jnoty-header span{
+.jnoty-warning .jnoty-content .jnoty-header span {
     color: #FFAB00 !important;;
 }
 
-.jnoty-danger .jnoty-content .jnoty-header span{
+.jnoty-danger .jnoty-content .jnoty-header span {
     color: #FF5230 !important;;
 }
 
@@ -70,8 +70,6 @@
 
 .jnoty-container {
     background-color: #fff;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=(0.9*100));
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=(0.9*100));
     zoom: 1;
     width: 350px;
     padding: 10px;
@@ -111,17 +109,12 @@
 .jnoty-closer {
     background-color: #fff;
     opacity: 0.9;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=(0.9*100));
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=(0.9*100));
     zoom: 1;
     width: 250px;
-    padding: 10px;
     margin: 10px;
-    text-align: left;
     display: none;
     border-radius: 5px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding: 4px 10px;
     cursor: pointer;
     font-size: .9em;
     font-weight: bold;
