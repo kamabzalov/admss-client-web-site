@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
     return (
         <header className="top-header" id="top-header-2">
@@ -5,8 +7,8 @@ export default function Header() {
                 <div className="row">
                     <div className="col-lg-8 col-md-8 col-sm-7 col-7">
                         <div className="list-inline">
-                            <a href="#"> 121 King Street, Melbourne</a>
-                            <a href="tel:info@themevessel.com" className="d-none-768">info@themevessel.com</a>
+                            <Link href="/">8 The Green Ste 8545 Dover, DE 19901</Link>
+                            <a href="mailto:info@autoxv.com">info@autoxv.com</a>
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-5 col-5">
@@ -39,7 +41,7 @@ export default function Header() {
                                     </a>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link" href="/contacts">Contact</a>
+                                    <Link className="nav-link" href="/contacts">Contacts</Link>
                                 </li>
                             </ul>
                         </div>
@@ -49,7 +51,7 @@ export default function Header() {
                             <div className="left"></div>
                             <div className="right">
                                 <h5>Call Free</h5>
-                                <h4><a href="tel:+55-4XX-634-7071">+01-325-2184</a></h4>
+                                <h4><a href="tel:+1-302-503-0000">+1-302-503-0000</a></h4>
                             </div>
                         </div>
                     </div>
