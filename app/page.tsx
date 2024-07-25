@@ -271,7 +271,7 @@ export default async function Page() {
                     <div className="row">
                         {data.map((inventory) => {
                             return (
-                                <div className="col-lg-4 col-md-6">
+                                <div key={inventory.itemuid} className="col-lg-4 col-md-6">
                                     <div className="car-box-3">
                                         <div className="car-thumbnail">
                                             <a href="#" className="car-img">
