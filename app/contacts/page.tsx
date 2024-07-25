@@ -68,7 +68,7 @@ export default function Page() {
                                     </div>
                                     <div className="detail align-self-center">
                                         <h4>Office Address</h4>
-                                        <p>20/F Green Road, Dhanmondi, Dhaka</p>
+                                        <p>8 The Green Ste 8545 Dover, DE 19901</p>
                                     </div>
                                 </div>
                                 <div className="ci-box d-flex">
@@ -78,7 +78,7 @@ export default function Page() {
                                     <div className="detail align-self-center">
                                         <h4>Phone Number</h4>
                                         <p>
-                                            <a href="tel:0477-0477-8556-552">Office: 0477 8556 552</a>
+                                            <a href="tel:+1-302-503-0000">+1-302-503-0000</a>
                                         </p>
                                     </div>
                                 </div>
@@ -89,49 +89,10 @@ export default function Page() {
                                     <div className="detail align-self-center">
                                         <h4>Email Address</h4>
                                         <p>
-                                            <a href="mailto:info@themevessel.com">info@themevessel.com</a>
+                                            <a href="mailto:info@autoxv.com">info@autoxv.com</a>
                                         </p>
                                     </div>
                                 </div>
-                                <div className="ci-box d-flex mb-40">
-                                    <div className="icon">
-                                        <i className="fa fa-fax"></i>
-                                    </div>
-                                    <div className="detail align-self-center">
-                                        <h4>Fax:</h4>
-                                        <p>
-                                            <a href="tel:0477-0477-8556-552">0477 8556 552</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <h3>Follow Us</h3>
-                                <ul className="social-list clearfix">
-                                    <li>
-                                        <a href="#" className="facebook-bg">
-                                            <i className="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="twitter-bg">
-                                            <i className="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="linkedin-bg">
-                                            <i className="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="google-bg">
-                                            <i className="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="rss-bg">
-                                            <i className="fa fa-rss"></i>
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
