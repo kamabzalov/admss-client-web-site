@@ -1,6 +1,3 @@
-const nextConfig = {
-    output: 'export',
-    assetPrefix: './'
-};
+const nextConfig = {};
 
 export default nextConfig;

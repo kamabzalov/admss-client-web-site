@@ -37,6 +37,10 @@ html, body {
     /* font-family: 'Open Sans', sans-serif; */
 }
 
+main {
+    min-height: 100%;
+}
+
 a {
     cursor: pointer;
     color: #2a2a2a;
