@@ -1,6 +1,5 @@
 const nextConfig = {
-     output: 'export',
-    assetPrefix: './'
+    output: 'export',
 };
 
 export default nextConfig;
