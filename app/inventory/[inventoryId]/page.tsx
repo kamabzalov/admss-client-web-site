@@ -13,7 +13,13 @@ export async function generateStaticParams() {
     }))
 }
 
-export default function InventoryCard(params: { params: { inventoryId: string } }) {
+export default async function InventoryCard(params: { params: { inventoryId: string } }) {
+    const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        }
+    })
+    const inventoryData: Inventory = await getInventoryDataById.json();
     return (
         <div className="car-details-page content-area-6">
             <div className="container">
@@ -24,7 +30,7 @@ export default function InventoryCard(params: { params: { inventoryId: string } 
                                 <div className="main clearfix">
                                     <div className="heading-car-2">
                                         <div className="pull-left">
-                                            <h3>Toyota Prius Specs</h3>
+                                            <h3>{inventoryData.Make} {inventoryData.Model}</h3>
                                             <p>
                                                 <i className="flaticon-pin"></i> 123 Kathal St. Tampa City,
                                             </p>
@@ -85,9 +91,6 @@ export default function InventoryCard(params: { params: { inventoryId: string } 
                                         <div className="accordion accordion-flush" id="accordionFlushExample">
                                             <div className="accordion-item">
                                                 <div className="car-description mb-50">
-                                                    <h3 className="heading-2">
-                                                        {params.params.inventoryId}
-                                                    </h3>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                                                         in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a
                                                         consectetur nulla. Nulla posuere sapien vitae lectus suscipit,
@@ -514,7 +517,7 @@ export default function InventoryCard(params: { params: { inventoryId: string } 
                                                                 </div>
                                                                 <div className="detail">
                                                                     <h1 className="title">
-                                                                        <a href="car-details.html">Toyota Prius</a>
+                                                                        <a href="car-details.html">{inventoryData.Make}</a>
                                                                     </h1>
                                                                     <div className="location">
                                                                         <a href="car-details.html">
@@ -587,31 +590,31 @@ export default function InventoryCard(params: { params: { inventoryId: string } 
                                 <h3 className="sidebar-title">Booking This Car</h3>
                                 <ul>
                                     <li>
-                                        <span>Make</span>Ferrari
+                                        <span>Make</span>{inventoryData.Make}
                                     </li>
                                     <li>
-                                        <span>Model</span>Maxima
+                                        <span>Model</span>{inventoryData.Model}
                                     </li>
                                     <li>
-                                        <span>Body Style</span>Convertible
+                                        <span>Body Style</span>{inventoryData.BodyStyle}
                                     </li>
                                     <li>
-                                        <span>Year</span>2017
+                                        <span>Year</span>{inventoryData.Year}
                                     </li>
                                     <li>
                                         <span>Condition</span>Brand New
                                     </li>
                                     <li>
-                                        <span>Mileage</span>34,000 mi
+                                        <span>Mileage</span>{inventoryData.mileage}
                                     </li>
                                     <li>
-                                        <span>Interior Color</span>Dark Grey
+                                        <span>Interior Color</span>{inventoryData.InteriorColor}
                                     </li>
                                     <li>
-                                        <span>Transmission</span>6-speed Manual
+                                        <span>Transmission</span>{inventoryData.Transmission}
                                     </li>
                                     <li>
-                                        <span>Engine</span>3.4L Mid-Engine V6
+                                        <span>Engine</span>{inventoryData.Engine}
                                     </li>
                                     <li>
                                         <span>No. of Gears:</span>5
@@ -620,7 +623,7 @@ export default function InventoryCard(params: { params: { inventoryId: string } 
                                         <span>Location</span>Toronto
                                     </li>
                                     <li>
-                                        <span>Fuel Type</span>Gasoline Fuel
+                                        <span>Fuel Type</span>{inventoryData.TypeOfFuel}
                                     </li>
                                 </ul>
                             </div>
