@@ -1,4 +1,19 @@
-export default function Page({params}: { params: { slug: string } }) {
+import { API_HOST, API_KEY } from "@/app/app-config";
+import { Inventory } from "@/app/models/inventory";
+
+export async function generateStaticParams() {
+    const inventories = await fetch(`${API_HOST}list/0`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        }
+    }).then((res) => res.json());
+
+    return inventories.map((inventory: Inventory) => ({
+        inventoryId: inventory.itemuid,
+    }))
+}
+
+export default function InventoryCard(params: { params: { inventoryId: string } }) {
     return (
         <div className="car-details-page content-area-6">
             <div className="container">
@@ -71,7 +86,7 @@ export default function Page({params}: { params: { slug: string } }) {
                                             <div className="accordion-item">
                                                 <div className="car-description mb-50">
                                                     <h3 className="heading-2">
-                                                        Description
+                                                        {params.params.inventoryId}
                                                     </h3>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                                                         in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a
