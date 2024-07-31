@@ -11,22 +11,12 @@ export default function Header() {
                             <a href="mailto:info@autoxv.com">info@autoxv.com</a>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-md-4 col-sm-5 col-5">
-                        <ul className="top-social-media pull-right">
-                            <li>
-                                <a href="#" className="sign-in">Login</a>
-                            </li>
-                            <li>
-                                <a href="#" className="sign-in">Register</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div className="main-header sticky-header header-with-top" id="main-header-4">
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="header-left">
-                        <a href="/">Home</a>
+                        <Link href="/">Admss</Link>
                     </div>
                     <button className="navbar-toggler" id="drawer" type="button">
                         <span className="fa fa-bars"></span>
@@ -35,10 +25,10 @@ export default function Header() {
                         <div className="navbar-collapse collapse" id="navbar">
                             <ul className="navbar-nav">
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <Link className="nav-link dropdown-toggle" href="/"
+                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Home
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <Link className="nav-link" href="/contacts">Contacts</Link>

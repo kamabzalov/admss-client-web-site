@@ -17,7 +17,7 @@ export default function Page() {
                         <div className="col-lg-7 col-md-12 col-sm-12 col-pad2">
                             <div className="contact-form contact-pad">
                                 <h3>Send us a Message</h3>
-                                <form id="contact_form">
+                                <form>
                                     <div className="row">
                                         <div className="col-md-6">
                                             <div className="form-group name">
