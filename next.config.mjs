@@ -1,5 +1,6 @@
 const nextConfig = {
-    output: 'export'
+    output: 'export',
+    trailingSlash: true
 };
 
 export default nextConfig;
