@@ -1,8 +1,9 @@
 import { API_HOST, API_KEY } from "@/app/app-config";
 import { Inventory } from "@/app/models/inventory";
+import { Base } from "@/app/models/base";
 import Link from "next/link";
 
-async function getData() {
+async function getInventories(): Promise<Inventory[]> {
     const response = await fetch(`${API_HOST}list/0`, {
         headers: {
             Authorization: `Basic ${API_KEY}`,
@@ -12,244 +13,119 @@ async function getData() {
 
 }
 
+async function getAvailableBrands(): Promise<Base[]> {
+    const response = await fetch(`${API_HOST}filter/make`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        }
+    });
+    return await response.json();
+}
+
+async function getAvailableModels(): Promise<Base[]> {
+    const response = await fetch(`${API_HOST}filter/model`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        }
+    });
+    return await response.json();
+}
+
+async function getAvailableLocations(): Promise<Base[]> {
+    const response = await fetch(`${API_HOST}filter/location`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        }
+    });
+    return await response.json();
+}
+
+async function getAvailableYears(): Promise<Base[]> {
+    const response = await fetch(`${API_HOST}filter/year`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        }
+    });
+    return await response.json();
+}
+
+async function getAvailableCategories(): Promise<Base[]> {
+    const response = await fetch(`${API_HOST}filter/category`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        }
+    });
+    return await response.json();
+}
+
 export default async function Page() {
-    const data: Inventory[] = await getData();
+    const data: Inventory[] = await getInventories();
+    const makes = await getAvailableBrands();
+    const models = await getAvailableModels();
+    const locations = await getAvailableLocations();
+    const years = await getAvailableYears();
+    const categories = await getAvailableCategories();
+
     return (
         <>
             <div className="search-box-3 content-area">
                 <div className="container">
                     <form>
                         <div className="row">
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <div className="dropdown bootstrap-select search-fields">
-                                        <select className="selectpicker search-fields" name="select-brand">
-                                            <option>Select Brand</option>
-                                            <option>Audi</option>
-                                            <option>BMW</option>
-                                            <option>Honda</option>
-                                            <option>Nissan</option>
-                                        </select>
-                                        <button type="button" className="btn dropdown-toggle btn-light"
-                                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-2"
-                                                aria-haspopup="listbox" aria-expanded="false" title="Select Make">
-                                            <div className="filter-option">
-                                                <div className="filter-option-inner">
-                                                    <div className="filter-option-inner-inner">Select Brand</div>
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div className="dropdown-menu">
-                                            <div className="inner show" role="listbox" id="bs-select-2"
-                                                 aria-activedescendant="bs-select-2-0">
-                                                <ul className="dropdown-menu inner show" role="presentation">
-                                                    <li className="selected active">
-                                                        <a
-                                                            className="dropdown-item active selected"
-                                                            id="bs-select-2-0">
-                                                            <span
-                                                                className="text">Select Make</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="dropdown-item" id="bs-select-2-1"><span
-                                                            className="text">BMW</span></a>
-                                                    </li>
-                                                    <li><a className="dropdown-item" id="bs-select-2-2"
-                                                    ><span
-                                                        className="text">Honda</span></a></li>
-                                                    <li>
-                                                        <a className="dropdown-item" id="bs-select-2-3"
-                                                        ><span
-                                                            className="text">Lamborghini</span></a></li>
-                                                    <li>
-                                                        <a className="dropdown-item"
-                                                           id="bs-select-2-4"><span
-                                                            className="text">Sports Car</span></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                                <select className="form-select form-select-lg" aria-label="Default select example">
+                                    <option>Select make</option>
+                                    {makes.map(make => {
+                                        return (
+                                            <option key={make.idx} value={make.idx}>{make.name}</option>
+                                        )
+                                    })}
+                                </select>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <div className="dropdown bootstrap-select search-fields"><select
-                                        className="selectpicker search-fields" name="select-make">
-                                        <option>Select Make</option>
-                                        <option>BMW</option>
-                                        <option>Honda</option>
-                                        <option>Lamborghini</option>
-                                        <option>Sports Car</option>
-                                    </select>
-                                        <button type="button" className="btn dropdown-toggle btn-light"
-                                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-2"
-                                                aria-haspopup="listbox" aria-expanded="false" title="Select Make">
-                                            <div className="filter-option">
-                                                <div className="filter-option-inner">
-                                                    <div className="filter-option-inner-inner">Select Make</div>
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div className="dropdown-menu">
-                                            <div className="inner show" role="listbox" id="bs-select-2"
-                                                 aria-activedescendant="bs-select-2-0">
-                                                <ul className="dropdown-menu inner show" role="presentation">
-                                                    <li className="selected active">
-                                                        <a
-                                                            className="dropdown-item active selected"
-                                                            id="bs-select-2-0"
-                                                        ><span
-                                                            className="text">Select Make</span></a></li>
-                                                    <li>
-                                                        <a className="dropdown-item" id="bs-select-2-1"
-                                                        ><span
-                                                            className="text">BMW</span></a></li>
-                                                    <li><a role="option" className="dropdown-item" id="bs-select-2-2"
-                                                    ><span
-                                                        className="text">Honda</span></a></li>
-                                                    <li>
-                                                        <a className="dropdown-item" id="bs-select-2-3"
-                                                        ><span
-                                                            className="text">Lamborghini</span></a></li>
-                                                    <li>
-                                                        <a className="dropdown-item"
-                                                           id="bs-select-2-4"><span
-                                                            className="text">Sports Car</span></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                                <select className="form-select form-select-lg" aria-label="Default select example">
+                                    <option>Select model</option>
+                                    {models.map(model => {
+                                        return (
+                                            <option key={model.idx} value={model.idx}>{model.name}</option>
+                                        )
+                                    })}
+                                </select>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <div className="dropdown bootstrap-select search-fields"><select
-                                        className="selectpicker search-fields" name="select-location">
-                                        <option>Select Location</option>
-                                        <option>United States</option>
-                                        <option>United Kingdom</option>
-                                    </select>
-                                        <button type="button" className="btn dropdown-toggle btn-light"
-                                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-3"
-                                                aria-haspopup="listbox" aria-expanded="false" title="Select Location">
-                                            <div className="filter-option">
-                                                <div className="filter-option-inner">
-                                                    <div className="filter-option-inner-inner">Select Location</div>
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div className="dropdown-menu">
-                                            <div className="inner show" role="listbox" id="bs-select-3"
-                                                 aria-activedescendant="bs-select-3-0">
-                                                <ul className="dropdown-menu inner show" role="presentation">
-                                                    <li className="selected active">
-                                                        <a
-                                                            className="dropdown-item active selected"
-                                                            id="bs-select-3-0"
-                                                            aria-selected="true"><span
-                                                            className="text">Select Location</span></a></li>
-                                                    <li><a className="dropdown-item" id="bs-select-3-1"
-                                                    ><span className="text">United States</span></a>
-                                                    </li>
-                                                    <li><a className="dropdown-item" id="bs-select-3-2"
-                                                    ><span className="text">United Kingdom</span></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                                <select className="form-select form-select-lg" aria-label="Default select example">
+                                    <option>Select location</option>
+                                    {locations.map(location => {
+                                        return (
+                                            <option key={location.idx} value={location.idx}>{location.name}</option>
+                                        )
+                                    })}
+                                </select>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <div className="dropdown bootstrap-select search-fields"><select
-                                        className="selectpicker search-fields" name="select-year">
-                                        <option>Select Year</option>
-                                        <option>2018</option>
-                                        <option>2019</option>
-                                        <option>2020</option>
-                                        <option>2021</option>
-                                    </select>
-                                        <button type="button" className="btn dropdown-toggle btn-light"
-                                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-4"
-                                                aria-haspopup="listbox" aria-expanded="false" title="Select Year">
-                                            <div className="filter-option">
-                                                <div className="filter-option-inner">
-                                                    <div className="filter-option-inner-inner">Select Year</div>
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div className="dropdown-menu ">
-                                            <div className="inner show" role="listbox" id="bs-select-4">
-                                                <ul className="dropdown-menu inner show" role="presentation"></ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                                <select className="form-select form-select-lg" aria-label="Default select example">
+                                    <option>Select year</option>
+                                    {years.map(year => {
+                                        return (
+                                            <option key={year.idx} value={year.idx}>{year.name}</option>
+                                        )
+                                    })}
+                                </select>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <div className="dropdown bootstrap-select search-fields"><select
-                                        className="selectpicker search-fields" name="select-type">
-                                        <option>Select Type Of Car</option>
-                                        <option>New Car</option>
-                                        <option>Used Car</option>
-                                    </select>
-                                        <button type="button" className="btn dropdown-toggle btn-light"
-                                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-5"
-                                                aria-haspopup="listbox" aria-expanded="false"
-                                                title="Select Type Of Car">
-                                            <div className="filter-option">
-                                                <div className="filter-option-inner">
-                                                    <div className="filter-option-inner-inner">Select Type Of Car</div>
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div className="dropdown-menu ">
-                                            <div className="inner show" role="listbox" id="bs-select-5">
-                                                <ul className="dropdown-menu inner show" role="presentation"></ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                                <select className="form-select form-select-lg" aria-label="Default select example">
+                                    <option>Select category</option>
+                                    {categories.map(category => {
+                                        return (
+                                            <option key={category.idx} value={category.idx}>{category.name}</option>
+                                        )
+                                    })}
+                                </select>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                                 <div className="form-group">
-                                    <select className="selectpicker search-fields" name="transmission">
-                                        <option>Transmission</option>
-                                        <option>Automatic</option>
-                                        <option>Manual</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <div className="range-slider">
-                                        <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price"
-                                             data-max-name="max_price"
-                                             className="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                             aria-disabled="false"><span className="min-value">0 USD</span> <span
-                                            className="max-value">150000 USD</span><input className="current-min"
-                                                                                          type="hidden" name="min_price"
-                                                                                          value="0"/><input
-                                            className="current-max" type="hidden" name="max_price" value="150000"/>
-                                            <div className="ui-slider-range ui-widget-header ui-corner-all"
-                                            ></div>
-                                            <a className="ui-slider-handle ui-state-default ui-corner-all" href="#"
-                                            ></a><a
-                                                className="ui-slider-handle ui-state-default ui-corner-all" href="#"
-                                            ></a></div>
-                                        <div className="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <button className="btn w-100 button-theme btn-md">
-                                        <i className="fa fa-search"></i>Find
+                                    <button className="btn w-100 button-theme btn-lg">
+                                        Find
                                     </button>
                                 </div>
                             </div>
@@ -321,7 +197,8 @@ export default async function Page() {
                                         </div>
                                         <div className="detail">
                                             <h1 className="title">
-                                                <Link href={`/inventory/${inventory.itemuid}`}>{inventory.Make} {inventory.Model}</Link>
+                                                <Link
+                                                    href={`/inventory/${inventory.itemuid}`}>{inventory.Make} {inventory.Model}</Link>
                                             </h1>
                                             <ul className="facilities-list clearfix">
                                                 <li>
@@ -655,7 +532,7 @@ export default async function Page() {
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-12">
-                                <a href="/contacts" className="btn btn-md">Get in Touch</a>
+                                <Link href="/contacts" className="btn btn-md">Get in Touch</Link>
                             </div>
                         </div>
                     </div>
