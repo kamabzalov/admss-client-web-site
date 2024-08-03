@@ -1,62 +1,14 @@
-import { API_HOST, API_KEY } from "@/app/app-config";
 import { Inventory } from "@/app/models/inventory";
-import { Base } from "@/app/models/base";
 import Link from "next/link";
-
-async function getInventories(): Promise<Inventory[]> {
-    const response = await fetch(`${API_HOST}list/0`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    });
-    return await response.json();
-
-}
-
-async function getAvailableBrands(): Promise<Base[]> {
-    const response = await fetch(`${API_HOST}filter/make`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    });
-    return await response.json();
-}
-
-async function getAvailableModels(): Promise<Base[]> {
-    const response = await fetch(`${API_HOST}filter/model`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    });
-    return await response.json();
-}
-
-async function getAvailableLocations(): Promise<Base[]> {
-    const response = await fetch(`${API_HOST}filter/location`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    });
-    return await response.json();
-}
-
-async function getAvailableYears(): Promise<Base[]> {
-    const response = await fetch(`${API_HOST}filter/year`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    });
-    return await response.json();
-}
-
-async function getAvailableCategories(): Promise<Base[]> {
-    const response = await fetch(`${API_HOST}filter/category`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    });
-    return await response.json();
-}
+import {
+    getAvailableBrands,
+    getAvailableCategories,
+    getAvailableLocations,
+    getAvailableModels,
+    getAvailableYears,
+    getInventories
+} from "@/app/http";
+import FilterSelector from "@/app/ui/filter-selector";
 
 export default async function Page() {
     const data: Inventory[] = await getInventories();
@@ -73,54 +25,22 @@ export default async function Page() {
                     <form>
                         <div className="row">
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <select className="form-select form-select-lg" aria-label="Default select example">
-                                    <option>Select make</option>
-                                    {makes.map(make => {
-                                        return (
-                                            <option key={make.idx} value={make.idx}>{make.name}</option>
-                                        )
-                                    })}
-                                </select>
+                                <FilterSelector filters={makes} filterKey="make"/>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <select className="form-select form-select-lg" aria-label="Default select example">
-                                    <option>Select model</option>
-                                    {models.map(model => {
-                                        return (
-                                            <option key={model.idx} value={model.idx}>{model.name}</option>
-                                        )
-                                    })}
-                                </select>
+                                <FilterSelector filters={models} filterKey="model"/>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <select className="form-select form-select-lg" aria-label="Default select example">
-                                    <option>Select location</option>
-                                    {locations.map(location => {
-                                        return (
-                                            <option key={location.idx} value={location.idx}>{location.name}</option>
-                                        )
-                                    })}
-                                </select>
+                                <FilterSelector filters={locations} filterKey="location"/>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <select className="form-select form-select-lg" aria-label="Default select example">
-                                    <option>Select year</option>
-                                    {years.map(year => {
-                                        return (
-                                            <option key={year.idx} value={year.idx}>{year.name}</option>
-                                        )
-                                    })}
-                                </select>
+                                <FilterSelector filters={years} filterKey="year"/>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <select className="form-select form-select-lg" aria-label="Default select example">
-                                    <option>Select category</option>
-                                    {categories.map(category => {
-                                        return (
-                                            <option key={category.idx} value={category.idx}>{category.name}</option>
-                                        )
-                                    })}
-                                </select>
+                                <FilterSelector filters={categories} filterKey="category"/>
+                            </div>
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                                <input min={0} max={9999} type="range" className="form-range" id="customRange1"/>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                                 <div className="form-group">
