@@ -9,6 +9,7 @@ import {
     getInventories
 } from "@/app/http";
 import FilterSelector from "@/app/ui/filter-selector";
+import { Suspense } from "react";
 
 export default async function Page() {
     const data: Inventory[] = await getInventories();
@@ -25,19 +26,29 @@ export default async function Page() {
                     <form>
                         <div className="row">
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <FilterSelector filters={makes} filterKey="make"/>
+                                <Suspense>
+                                    <FilterSelector filters={makes} filterKey="make"/>
+                                </Suspense>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <FilterSelector filters={models} filterKey="model"/>
+                                <Suspense>
+                                    <FilterSelector filters={models} filterKey="model"/>
+                                </Suspense>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <FilterSelector filters={locations} filterKey="location"/>
+                                <Suspense>
+                                    <FilterSelector filters={locations} filterKey="location"/>
+                                </Suspense>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <FilterSelector filters={years} filterKey="year"/>
+                                <Suspense>
+                                    <FilterSelector filters={years} filterKey="year"/>
+                                </Suspense>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <FilterSelector filters={categories} filterKey="category"/>
+                                <Suspense>
+                                    <FilterSelector filters={categories} filterKey="category"/>
+                                </Suspense>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                                 <input min={0} max={9999} type="range" className="form-range" id="customRange1"/>
