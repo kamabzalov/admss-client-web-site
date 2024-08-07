@@ -41,8 +41,8 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                     </div>
                                     {preview && <Image src={preview?.itemurl}
                                                        alt={inventoryData.Make + ' ' + inventoryData.Model}
-                                                       width={100}
-                                                       height={100}
+                                                       width={0}
+                                                       height={0}
                                                        sizes="100vw"
                                                        style={{width: '100%', height: 'auto'}}/>}
                                 </div>

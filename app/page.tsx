@@ -11,6 +11,7 @@ import {
 import FilterSelector from "@/app/ui/filter-selector";
 import { Suspense } from "react";
 import SearchButton from "@/app/ui/search-button";
+import Image from "next/image";
 
 export default async function Page() {
     const data: Inventory[] = await getInventories();
@@ -86,8 +87,12 @@ export default async function Page() {
                                                 href={`/inventory/${inventory.itemuid}`}>
                                                 <div className="price-box-2"><sup>$</sup>{inventory.Price}</div>
                                                 {media &&
-                                                    <img className="d-block w-100" src={media[0].itemurl}
-                                                         alt={inventory.Model}/>}
+                                                    <Image width={0}
+                                                           height={0}
+                                                           sizes="100vw"
+                                                           style={{width: '100%', height: 'auto'}}
+                                                           className="d-block w-100" src={media[0].itemurl}
+                                                           alt={inventory.Model}/>}
                                             </Link>
                                         </div>
                                         <div className="detail">
@@ -143,7 +148,7 @@ export default async function Page() {
                                 </div>
                                 <div className="detail">
                                     <h5>
-                                        <a href="services.html">Highly Secured</a>
+                                        Highly Secured
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                         Ipsum has been the industry standard dummy text ever since the</p>
@@ -157,7 +162,7 @@ export default async function Page() {
                                 </div>
                                 <div className="detail">
                                     <h5>
-                                        <a href="services.html">Trusted Agents</a>
+                                        Trusted Agents
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                         Ipsum has been the industrys standard dummy text ever since the</p>
@@ -171,7 +176,7 @@ export default async function Page() {
                                 </div>
                                 <div className="detail">
                                     <h5>
-                                        <a href="services.html">Get an Offer</a>
+                                        Get an Offer
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                         Ipsum has been the industrys standard dummy text ever since the</p>
@@ -185,7 +190,7 @@ export default async function Page() {
                                 </div>
                                 <div className="detail">
                                     <h5>
-                                        <a href="/">Free Support</a>
+                                        Free Support
                                     </h5>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                         Ipsum has been the industrys standard dummy text ever since the</p>
@@ -222,7 +227,7 @@ export default async function Page() {
                                         <div className="ling-section">
                                             <div className="lo-text clearfix">
                                                 <h3>
-                                                    <a href="car-details.html">Toyota Prius specs</a>
+                                                    Toyota Prius specs
                                                 </h3>
                                                 <h5>$920.00 <span>/monthly</span></h5>
                                             </div>
@@ -241,7 +246,7 @@ export default async function Page() {
                                         <div className="ling-section">
                                             <div className="lo-text clearfix">
                                                 <h3>
-                                                    <a href="car-details.html">Audi Q7 2018</a>
+                                                    Audi Q7 2018
                                                 </h3>
                                                 <h5>430.00 <span>/monthly</span></h5>
                                             </div>
@@ -261,7 +266,7 @@ export default async function Page() {
                                 <div className="ling-section">
                                     <div className="lo-text clearfix">
                                         <h3>
-                                            <a href="car-details.html">Audi 2021</a>
+                                            Audi 2021
                                         </h3>
                                         <h5>740.00 <span>/monthly</span></h5>
                                     </div>
@@ -282,7 +287,7 @@ export default async function Page() {
                                         <div className="ling-section">
                                             <div className="lo-text clearfix">
                                                 <h3>
-                                                    <a href="car-details.html">Toyota Prius</a>
+                                                    Toyota Prius
                                                 </h3>
                                                 <h5>410.00 <span>/monthly</span></h5>
                                             </div>
@@ -301,7 +306,7 @@ export default async function Page() {
                                         <div className="ling-section">
                                             <div className="lo-text clearfix">
                                                 <h3>
-                                                    <a href="/">2020 Ford Mustang</a>
+                                                    2020 Ford Mustang
                                                 </h3>
                                                 <h5>920.00 <span>/monthly</span></h5>
                                             </div>
