@@ -10,6 +10,7 @@ import {
 } from "@/app/http";
 import FilterSelector from "@/app/ui/filter-selector";
 import { Suspense } from "react";
+import SearchButton from "@/app/ui/search-button";
 
 export default async function Page() {
     const data: Inventory[] = await getInventories();
@@ -18,7 +19,6 @@ export default async function Page() {
     const locations = await getAvailableLocations();
     const years = await getAvailableYears();
     const categories = await getAvailableCategories();
-
     return (
         <>
             <div className="search-box-3 content-area">
@@ -55,9 +55,7 @@ export default async function Page() {
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                                 <div className="form-group">
-                                    <button className="btn w-100 button-theme btn-lg">
-                                        Find
-                                    </button>
+                                    <SearchButton></SearchButton>
                                 </div>
                             </div>
                         </div>
@@ -78,53 +76,19 @@ export default async function Page() {
                     </div>
                     <div className="row">
                         {data.map((inventory: Inventory, index: number) => {
+                            const {media} = inventory;
                             return (
-                                <div key={index} className="col-lg-4 col-md-6">
+                                <div key={inventory.itemuid} className="col-lg-4 col-md-6">
                                     <div className="car-box-3">
                                         <div className="car-thumbnail">
-                                            <a href="#" className="car-img">
-                                                <div className="tag-2 bg-active">Featured</div>
-                                                <div className="price-box-2"><sup>$</sup>800<span>/month</span></div>
-                                            </a>
-                                            <div className="carbox-overlap-wrapper">
-                                                <div className="overlap-box">
-                                                    <div className="overlap-btns-area">
-                                                        <a className="overlap-btn" data-bs-toggle="modal"
-                                                           data-bs-target="#carOverviewModal">
-                                                            <i className="fa fa-eye-slash"></i>
-                                                        </a>
-                                                        <a className="overlap-btn wishlist-btn">
-                                                            <i className="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a className="overlap-btn compare-btn">
-                                                            <i className="fa fa-balance-scale"></i>
-                                                        </a>
-                                                        <div className="car-magnify-gallery">
-                                                            <a href="#" className="overlap-btn"
-                                                               data-sub-html="<h4>Hyundai Santa</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                                <i className="fa fa-expand"></i>
-                                                                <img className="hidden" src="#" alt="hidden-img"/>
-                                                            </a>
-                                                            <a href="#" className="hidden"
-                                                               data-sub-html="<h4>2020 Ford Mustang</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                                <img className="hidden" src="#" alt="hidden-img"/>
-                                                            </a>
-                                                            <a href="#" className="hidden"
-                                                               data-sub-html="<h4>Lexus GS F</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                                <img className="hidden" src="#" alt="hidden-img"/>
-                                                            </a>
-                                                            <a href="#" className="hidden"
-                                                               data-sub-html="<h4>Toyota Prius specs</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                                <img className="hidden" src="#" alt="hidden-img"/>
-                                                            </a>
-                                                            <a href="#" className="hidden"
-                                                               data-sub-html="<h4>Toyota Prius</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                                <img className="hidden" src="#" alt="hidden-img"/>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <Link
+                                                className="car-img"
+                                                href={`/inventory/${inventory.itemuid}`}>
+                                                <div className="price-box-2"><sup>$</sup>{inventory.Price}</div>
+                                                {media &&
+                                                    <img className="d-block w-100" src={media[0].itemurl}
+                                                         alt={inventory.Model}/>}
+                                            </Link>
                                         </div>
                                         <div className="detail">
                                             <h1 className="title">

@@ -2793,18 +2793,6 @@ input[type=checkbox]:checked + label:before {
     color: #424040;
 }
 
-.car-box-3 .car-thumbnail:before {
-    content: "";
-    top: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 8;
-    background: linear-gradient(to top, rgba(47, 45, 45, 0.2) 0%, rgba(0, 0, 0, 0.1) 35%, rgba(2, 2, 2, 0) 60%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 0;
-    opacity: 1;
-}
-
 .car-box-3 .car-thumbnail {
     position: relative;
     display: block;

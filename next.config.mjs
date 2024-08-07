@@ -1,6 +1,13 @@
 const nextConfig = {
-    output: 'export',
-    trailingSlash: true
+    trailingSlash: true,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'app.admss.com',
+            },
+        ],
+    },
 };
 
 export default nextConfig;

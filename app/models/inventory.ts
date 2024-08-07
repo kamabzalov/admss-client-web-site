@@ -1,3 +1,5 @@
+import { Media } from "@/app/models/media";
+
 export interface Inventory {
     BodyStyle: string;
     Category: string;
@@ -50,5 +52,6 @@ export interface Inventory {
     options_info: string[];
     updated: Date;
     useruid: string;
-
+    media: Array<Media>;
 }
+
