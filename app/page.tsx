@@ -91,7 +91,7 @@ export default async function Page() {
                                                            height={0}
                                                            sizes="100vw"
                                                            style={{width: '100%', height: 'auto'}}
-                                                           className="d-block w-100" src={media[0].itemurl}
+                                                           className="d-block w-100" src={media[0].itemurl_mini_preview}
                                                            alt={inventory.Model}/>}
                                             </Link>
                                         </div>
