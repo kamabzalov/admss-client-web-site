@@ -1,5 +1,3 @@
-import { Inventory } from "@/app/models/inventory";
-import Link from "next/link";
 import {
     getAvailableBrands,
     getAvailableCategories,
@@ -8,12 +6,18 @@ import {
     getAvailableYears,
     getInventories
 } from "@/app/http";
-import FilterSelector from "@/app/ui/filter-selector";
+import { Inventory } from "@/app/models/inventory";
+import Link from "next/link";
 import { Suspense } from "react";
-import SearchButton from "@/app/ui/search-button";
 import Image from "next/image";
+import FilterSelector from "@/app/ui/filter-selector";
+import SearchButton from "@/app/ui/search-button";
 
-export default async function Page() {
+export default async function Page({
+                                       searchParams,
+                                   }: {
+    searchParams?: any;
+}) {
     const data: Inventory[] = await getInventories();
     const makes = await getAvailableBrands();
     const models = await getAvailableModels();
@@ -66,7 +70,7 @@ export default async function Page() {
             <div className="featured-car">
                 <div className="container">
                     <div className="main-title">
-                        <h1 className="mb-10">Featured Cars</h1>
+                        <h1 className="mb-10">Featured Cars </h1>
                         <div className="title-border">
                             <div className="title-border-inner"></div>
                             <div className="title-border-inner"></div>
@@ -87,10 +91,8 @@ export default async function Page() {
                                                 href={`/inventory/${inventory.itemuid}`}>
                                                 <div className="price-box-2"><sup>$</sup>{inventory.Price}</div>
                                                 {media &&
-                                                    <Image width={0}
-                                                           height={0}
-                                                           sizes="100vw"
-                                                           style={{width: '100%', height: 'auto'}}
+                                                    <Image width={415}
+                                                           height={280}
                                                            className="d-block w-100" src={media[0].itemurl_mini_preview}
                                                            alt={inventory.Model}/>}
                                             </Link>
@@ -100,24 +102,24 @@ export default async function Page() {
                                                 <Link
                                                     href={`/inventory/${inventory.itemuid}`}>{inventory.Make} {inventory.Model}</Link>
                                             </h1>
-                                            <ul className="facilities-list clearfix">
+                                            <ul className="facilities-list">
                                                 <li>
-                                                    <i className="flaticon-way"></i> {inventory.mileage} miles
+                                                    <i className="fi fi-sr-road"></i> {inventory.mileage}&nbsp;miles
                                                 </li>
                                                 <li>
-                                                    <i className="flaticon-manual-transmission"></i> {inventory.Transmission}
+                                                    <i className="fi fi-rs-plan"></i> {inventory.Transmission}
                                                 </li>
                                                 <li>
-                                                    <i className="flaticon-calendar-1"></i> 2021
+                                                    <i className="fi fi-ss-calendar"></i> 2021
                                                 </li>
                                                 <li>
-                                                    <i className="flaticon-fuel"></i> {inventory.TypeOfFuel}
+                                                    <i className="fi fi-sr-gas-pump-alt"></i> {inventory.TypeOfFuel}
                                                 </li>
                                                 <li>
-                                                    <i className="flaticon-car"></i> Sport
+                                                    <i className="fi fi-bs-car"></i> Sport
                                                 </li>
                                                 <li>
-                                                    <i className="flaticon-gear"></i> {inventory.ExteriorColor}
+                                                    <i className="fi fi-sr-settings"></i>{inventory.ExteriorColor}
                                                 </li>
                                             </ul>
                                         </div>
@@ -335,17 +337,6 @@ export default async function Page() {
                             <div className="team-3">
                                 <div className="thumb">
                                     <img src="/img/avatar-1.png" alt="agent" className="img-fluid"/>
-                                    <ul>
-                                        <li>
-                                            <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="twitter-bg"><i className="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="google-bg"><i className="fa fa-google"></i></a>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div className="info">
                                     <h5><a href="/">Michelle Nelson</a></h5>
@@ -357,17 +348,6 @@ export default async function Page() {
                             <div className="team-3">
                                 <div className="thumb">
                                     <img src="/img/avatar-2.png" alt="agent" className="img-fluid"/>
-                                    <ul>
-                                        <li>
-                                            <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="twitter-bg"><i className="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="google-bg"><i className="fa fa-google"></i></a>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div className="info">
                                     <h5><a href="/">Martin Smith</a></h5>
@@ -379,17 +359,7 @@ export default async function Page() {
                             <div className="team-3">
                                 <div className="thumb">
                                     <img src="/img/avatar-3.png" alt="agent" className="img-fluid"/>
-                                    <ul>
-                                        <li>
-                                            <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="twitter-bg"><i className="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="google-bg"><i className="fa fa-google"></i></a>
-                                        </li>
-                                    </ul>
+
                                 </div>
                                 <div className="info">
                                     <h5><a href="agent.html">Carolyn Stone</a></h5>
@@ -401,17 +371,6 @@ export default async function Page() {
                             <div className="team-3">
                                 <div className="thumb">
                                     <img src="/img/avatar-4.png" alt="agent" className="img-fluid"/>
-                                    <ul>
-                                        <li>
-                                            <a href="#" className="facebook-bg"><i className="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="twitter-bg"><i className="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="google-bg"><i className="fa fa-google"></i></a>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div className="info">
                                     <h5><a href="/">Brandon Miller</a></h5>

@@ -2771,16 +2771,17 @@ input[type=checkbox]:checked + label:before {
 
 .car-box-3 .facilities-list li {
     list-style: none;
-    float: left;
+    display: inline-flex;
     width: 33.33%;
     font-weight: 400;
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .car-box-3 .facilities-list li i {
     font-weight: 500;
     font-size: 15px;
+    margin-right: 4px;
 }
 
 .car-box-3 .detail .location {
@@ -5867,6 +5868,9 @@ input[type=checkbox]:checked + label:before {
 }
 
 .contact-1 .contact-details .ci-box i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 65px;
     font-size: 25px;
     height: 65px;

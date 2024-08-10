@@ -14,7 +14,7 @@ export async function generateStaticParams() {
     }))
 }
 
-export default async function Page(params: { params: { inventoryId: string } }) {
+export default async function Page(params: { params: { inventoryId: string } } ) {
     const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
         headers: {
             Authorization: `Basic ${API_KEY}`,

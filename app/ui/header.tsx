@@ -38,7 +38,9 @@ export default function Header() {
                     </div>
                     <div className="header-right">
                         <div className="contact-now">
-                            <div className="left"></div>
+                            <div className="left">
+                                <i className="fi fi-sr-phone-call"></i>
+                            </div>
                             <div className="right">
                                 <h5>Call Free</h5>
                                 <h4><a href="tel:+1-302-503-0000">+1-302-503-0000</a></h4>

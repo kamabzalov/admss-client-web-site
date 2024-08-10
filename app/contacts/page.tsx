@@ -64,7 +64,7 @@ export default function Page() {
                                 <h3>Opening Hours</h3>
                                 <div className="ci-box d-flex">
                                     <div className="icon">
-                                        <i className="fa fa-map-marker"></i>
+                                        <i className="fi fi-sr-marker"></i>
                                     </div>
                                     <div className="detail align-self-center">
                                         <h4>Office Address</h4>
@@ -73,7 +73,7 @@ export default function Page() {
                                 </div>
                                 <div className="ci-box d-flex">
                                     <div className="icon">
-                                        <i className="fa fa-phone"></i>
+                                        <i className="fi fi-sr-phone-call"></i>
                                     </div>
                                     <div className="detail align-self-center">
                                         <h4>Phone Number</h4>
@@ -84,7 +84,7 @@ export default function Page() {
                                 </div>
                                 <div className="ci-box d-flex">
                                     <div className="icon">
-                                        <i className="fa fa-envelope"></i>
+                                        <i className="fi fi-sr-envelope"></i>
                                     </div>
                                     <div className="detail align-self-center">
                                         <h4>Email Address</h4>
