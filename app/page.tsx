@@ -3,6 +3,7 @@ import {
     getAvailableCategories,
     getAvailableLocations,
     getAvailableModels,
+    getAvailablePrices,
     getAvailableYears,
     getInventories
 } from "@/app/http";
@@ -12,15 +13,18 @@ import { Suspense } from "react";
 import Image from "next/image";
 import FilterSelector from "@/app/ui/filter-selector";
 import SearchButton from "@/app/ui/search-button";
-
+import RangeSlider from "@/app/ui/range-slider";
+import { Base } from "@/app/models/base";
 
 export default async function Page() {
-    let data: Inventory[] =  await getInventories();
-    const makes = await getAvailableBrands();
-    const models = await getAvailableModels();
-    const locations = await getAvailableLocations();
-    const years = await getAvailableYears();
-    const categories = await getAvailableCategories();
+    let data: Inventory[] = [];
+    const makes: Base[] = await getAvailableBrands();
+    const models: Base[] = await getAvailableModels();
+    const locations: Base[] = await getAvailableLocations();
+    const years: Base[] = await getAvailableYears();
+    const categories: Base[] = await getAvailableCategories();
+    const prices: Base[] = await getAvailablePrices();
+
     return (
         <>
             <div className="search-box-3 content-area">
@@ -52,8 +56,8 @@ export default async function Page() {
                                     <FilterSelector filters={categories} filterKey="category"/>
                                 </Suspense>
                             </div>
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <input min={0} max={9999} type="range" className="form-range" id="customRange1"/>
+                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6 pt-2 pb-2">
+                                <RangeSlider prices={prices}/>
                             </div>
                             <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                                 <div className="form-group">

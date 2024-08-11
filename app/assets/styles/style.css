@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-     font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -34,6 +34,23 @@ span {
 
 .carousel-caption h5 {
     color: #fff;
+}
+
+.rc-slider-track {
+    background: #f0151f !important;
+}
+
+.rc-slider-handle {
+    border-radius: 0 !important;
+    border: 2px solid #f0151f !important;
+    background: #f0151f !important;
+    opacity: 1 !important;
+}
+
+.rc-slider-handle:active {
+    box-shadow: none !important;
+    background: #f0151f !important;
+    border: #f0151f !important;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
