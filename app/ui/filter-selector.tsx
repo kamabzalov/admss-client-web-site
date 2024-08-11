@@ -2,18 +2,17 @@
 
 import { useState } from "react";
 import { Base } from "@/app/models/base";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface FilterSelectorProps {
     filters: Base[];
     filterKey: string;
 }
 
-
 export default function FilterSelector({filters, filterKey}: FilterSelectorProps) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
-    const { replace } = useRouter();
+    const {replace} = useRouter();
     const [options] = useState<Base[]>(filters);
 
     const changeFilter = (item: React.ChangeEvent<HTMLSelectElement>) => {
@@ -21,10 +20,10 @@ export default function FilterSelector({filters, filterKey}: FilterSelectorProps
         const selectedItem = options.find(option => +option.idx === +item.target.value);
         if (selectedItem) {
             params.set(filterKey, selectedItem.name);
-            replace(`${pathname}?${params.toString()}`);
         } else {
-            replace(`${pathname}`);
+            params.delete(filterKey);
         }
+        replace(`${pathname}?${params.toString()}`);
     }
 
     return (

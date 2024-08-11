@@ -1,11 +1,10 @@
 'use client'
 
-import { getInventories } from "@/app/http";
-
 export default function SearchButton() {
 
+
     const onSearchClick = () => {
-        getInventories();
+
     }
 
     return (

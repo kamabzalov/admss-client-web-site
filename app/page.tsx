@@ -13,12 +13,9 @@ import Image from "next/image";
 import FilterSelector from "@/app/ui/filter-selector";
 import SearchButton from "@/app/ui/search-button";
 
-export default async function Page({
-                                       searchParams,
-                                   }: {
-    searchParams?: any;
-}) {
-    const data: Inventory[] = await getInventories();
+
+export default async function Page() {
+    let data: Inventory[] =  await getInventories();
     const makes = await getAvailableBrands();
     const models = await getAvailableModels();
     const locations = await getAvailableLocations();

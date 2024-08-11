@@ -1,6 +1,7 @@
 import { API_HOST, API_KEY } from "@/app/app-config";
 import { Inventory } from "@/app/models/inventory";
 import Image from "next/image";
+import ImageCarousel from "@/app/ui/carousel";
 
 export async function generateStaticParams() {
     const inventories = await fetch(`${API_HOST}list/0`, {
@@ -14,7 +15,7 @@ export async function generateStaticParams() {
     }))
 }
 
-export default async function Page(params: { params: { inventoryId: string } } ) {
+export default async function Page(params: { params: { inventoryId: string } }) {
     const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
         headers: {
             Authorization: `Basic ${API_KEY}`,
@@ -41,12 +42,16 @@ export default async function Page(params: { params: { inventoryId: string } } )
                                     </div>
                                     {preview && <Image src={preview?.itemurl_preview}
                                                        alt={inventoryData.Make + ' ' + inventoryData.Model}
-                                                       width={0}
-                                                       height={0}
-                                                       sizes="100vw"
-                                                       style={{width: '100%', height: 'auto'}}/>}
+                                                       width={856} height={500}
+                                    />}
                                 </div>
                             </div>
+
+                            <div>
+                                {inventoryData.media.length && <ImageCarousel images={inventoryData.media}
+                                                                              caption={inventoryData.Make + ' ' + inventoryData.Model}/>}
+                            </div>
+
                             <p>{inventoryData.Notes}</p>
                         </div>
                     </div>

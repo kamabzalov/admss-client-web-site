@@ -1,5 +1,5 @@
 @import "~@flaticon/flaticon-uicons/css/all/all";
-@import url('assets/styles/bootstrap.min.css');
+@import 'bootstrap/dist/css/bootstrap.min.css';
 @import url('assets/styles/animate.min.css');
 @import url('assets/styles/map.css');
 @import url('assets/styles/initial.css');
