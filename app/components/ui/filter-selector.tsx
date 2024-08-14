@@ -16,7 +16,7 @@ export default function FilterSelector({filters, filterKey}: FilterSelectorProps
     const [options] = useState<Base[]>(filters);
 
     const changeFilter = (item: React.ChangeEvent<HTMLSelectElement>) => {
-        const params = new URLSearchParams(searchParams);
+        const params = new URLSearchParams(Array.from(searchParams.entries()));
         const selectedItem = options.find(option => +option.idx === +item.target.value);
         if (selectedItem) {
             params.set(filterKey, selectedItem.name);

@@ -9,128 +9,28 @@ import {
 } from "@/app/http";
 import { Inventory } from "@/app/models/inventory";
 import Link from "next/link";
-import { Suspense } from "react";
-import Image from "next/image";
-import FilterSelector from "@/app/ui/filter-selector";
-import SearchButton from "@/app/ui/search-button";
-import RangeSlider from "@/app/ui/range-slider";
-import { Base } from "@/app/models/base";
+import InventoriesList from "@/app/components/inventories-list";
+import FiltersForm from "@/app/components/ui/filters-form";
 
 export default async function Page() {
-    let data: Inventory[] = [];
-    const makes: Base[] = await getAvailableBrands();
-    const models: Base[] = await getAvailableModels();
-    const locations: Base[] = await getAvailableLocations();
-    const years: Base[] = await getAvailableYears();
-    const categories: Base[] = await getAvailableCategories();
-    const prices: Base[] = await getAvailablePrices();
+    const data: Inventory[] = await getInventories();
+    const entities = await Promise.all([
+        getAvailableBrands(),
+        getAvailableModels(),
+        getAvailableLocations(),
+        getAvailableYears(),
+        getAvailableCategories(),
+        getAvailablePrices()
+    ]);
 
     return (
         <>
             <div className="search-box-3 content-area">
                 <div className="container">
-                    <form>
-                        <div className="row">
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <Suspense>
-                                    <FilterSelector filters={makes} filterKey="make"/>
-                                </Suspense>
-                            </div>
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <Suspense>
-                                    <FilterSelector filters={models} filterKey="model"/>
-                                </Suspense>
-                            </div>
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <Suspense>
-                                    <FilterSelector filters={locations} filterKey="location"/>
-                                </Suspense>
-                            </div>
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <Suspense>
-                                    <FilterSelector filters={years} filterKey="year"/>
-                                </Suspense>
-                            </div>
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <Suspense>
-                                    <FilterSelector filters={categories} filterKey="category"/>
-                                </Suspense>
-                            </div>
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6 pt-2 pb-2">
-                                <RangeSlider prices={prices}/>
-                            </div>
-                            <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div className="form-group">
-                                    <SearchButton></SearchButton>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <FiltersForm filters={entities}/>
                 </div>
             </div>
-            <div className="featured-car">
-                <div className="container">
-                    <div className="main-title">
-                        <h1 className="mb-10">Featured Cars </h1>
-                        <div className="title-border">
-                            <div className="title-border-inner"></div>
-                            <div className="title-border-inner"></div>
-                            <div className="title-border-inner"></div>
-                            <div className="title-border-inner"></div>
-                            <div className="title-border-inner"></div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        {data.map((inventory: Inventory, index: number) => {
-                            const {media} = inventory;
-                            return (
-                                <div key={inventory.itemuid} className="col-lg-4 col-md-6">
-                                    <div className="car-box-3">
-                                        <div className="car-thumbnail">
-                                            <Link
-                                                className="car-img"
-                                                href={`/inventory/${inventory.itemuid}`}>
-                                                <div className="price-box-2"><sup>$</sup>{inventory.Price}</div>
-                                                {media &&
-                                                    <Image width={415}
-                                                           height={280}
-                                                           className="d-block w-100" src={media[0].itemurl_mini_preview}
-                                                           alt={inventory.Model}/>}
-                                            </Link>
-                                        </div>
-                                        <div className="detail">
-                                            <h1 className="title">
-                                                <Link
-                                                    href={`/inventory/${inventory.itemuid}`}>{inventory.Make} {inventory.Model}</Link>
-                                            </h1>
-                                            <ul className="facilities-list">
-                                                <li>
-                                                    <i className="fi fi-sr-road"></i> {inventory.mileage}&nbsp;miles
-                                                </li>
-                                                <li>
-                                                    <i className="fi fi-rs-plan"></i> {inventory.Transmission}
-                                                </li>
-                                                <li>
-                                                    <i className="fi fi-ss-calendar"></i> 2021
-                                                </li>
-                                                <li>
-                                                    <i className="fi fi-sr-gas-pump-alt"></i> {inventory.TypeOfFuel}
-                                                </li>
-                                                <li>
-                                                    <i className="fi fi-bs-car"></i> Sport
-                                                </li>
-                                                <li>
-                                                    <i className="fi fi-sr-settings"></i>{inventory.ExteriorColor}
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
+            {data.length && <InventoriesList inventories={data}/>}
             <div className="advantages-2 content-area bg-grea-3">
                 <div className="container">
                     <div className="main-title">

@@ -1,19 +1,8 @@
 import { API_HOST, API_KEY } from "@/app/app-config";
 import { Inventory } from "@/app/models/inventory";
 import Image from "next/image";
-import ImageCarousel from "@/app/ui/carousel";
+import ImageCarousel from "@/app/components/ui/carousel";
 
-export async function generateStaticParams() {
-    const inventories = await fetch(`${API_HOST}list/0`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    }).then((res) => res.json());
-
-    return inventories.map((inventory: Inventory) => ({
-        inventoryId: inventory.itemuid,
-    }))
-}
 
 export default async function Page(params: { params: { inventoryId: string } }) {
     const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
@@ -40,9 +29,9 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                             <div className="price-box-3"><sup>$</sup>{inventoryData.Price}</div>
                                         </div>
                                     </div>
-                                    {preview && <Image src={preview?.itemurl_preview}
+                                    {preview && <Image src={preview?.itemurl}
                                                        alt={inventoryData.Make + ' ' + inventoryData.Model}
-                                                       width={856} height={500}
+                                                       width={856} height={640}
                                     />}
                                 </div>
                             </div>

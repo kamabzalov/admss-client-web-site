@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/app/ui/header";
-import Footer from "@/app/ui/footer";
+import Header from "@/app/components/ui/header";
+import Footer from "@/app/components/ui/footer";
 
 export const metadata: Metadata = {
     title: "Admss inventory list site",
