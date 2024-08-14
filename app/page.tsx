@@ -12,8 +12,8 @@ import Link from "next/link";
 import InventoriesList from "@/app/components/inventories-list";
 import FiltersForm from "@/app/components/ui/filters-form";
 
-export default async function Page() {
-    const data: Inventory[] = await getInventories();
+export default async function Page({searchParams}: any) {
+    let data: Inventory[] = await getInventories();
     const entities = await Promise.all([
         getAvailableBrands(),
         getAvailableModels(),
@@ -22,6 +22,10 @@ export default async function Page() {
         getAvailableCategories(),
         getAvailablePrices()
     ]);
+
+    if (Object.keys(searchParams).length) {
+        data = await getInventories(searchParams);
+    }
 
     return (
         <>

@@ -3,7 +3,8 @@ import { API_HOST, API_KEY } from "@/app/app-config";
 import { Base } from "@/app/models/base";
 
 export async function getInventories(filter?: string): Promise<Inventory[]> {
-    const response = await fetch(`${API_HOST}list/0?${filter}`, {
+    const query = new URLSearchParams(filter).toString();
+    const response = await fetch(`${API_HOST}list/0?${query}`, {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         }
