@@ -13,7 +13,7 @@ import InventoriesList from "@/app/components/inventories-list";
 import FiltersForm from "@/app/components/ui/filters-form";
 
 export default async function Page() {
-    const data: Inventory[] = await getInventories();
+    const data: Inventory[] = [];
     const entities = await Promise.all([
         getAvailableBrands(),
         getAvailableModels(),
