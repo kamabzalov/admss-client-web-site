@@ -11,8 +11,8 @@ interface ImageCarouselProps {
 
 export default function ImageCarousel({images, caption}: ImageCarouselProps) {
     const slides = images.map(
-        (image) =>
-            <Carousel.Item key={image.itemuid}>
+        (image, index) =>
+            <Carousel.Item key={index}>
                 <Image src={image.itemurl_preview} alt="" width={856} height={640}/>
                 <Carousel.Caption>
                     <h5>{caption}</h5>

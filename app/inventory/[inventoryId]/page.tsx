@@ -2,6 +2,7 @@ import { API_HOST, API_KEY } from "@/app/app-config";
 import { Inventory } from "@/app/models/inventory";
 import Image from "next/image";
 import ImageCarousel from "@/app/components/ui/carousel";
+import AppTabs from "@/app/components/ui/tabs";
 
 
 export default async function Page(params: { params: { inventoryId: string } }) {
@@ -36,12 +37,10 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                 </div>
                             </div>
 
-                            <div>
-                                {inventoryData.media.length && <ImageCarousel images={inventoryData.media}
-                                                                              caption={inventoryData.Make + ' ' + inventoryData.Model}/>}
+                            <div className="tabbing tabbing-box mb-40">
+                                <AppTabs descriptionTab={inventoryData.Notes} images={inventoryData.media} caption={inventoryData.Make + ' ' + inventoryData.Model}/>
                             </div>
 
-                            <p>{inventoryData.Notes}</p>
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-12">

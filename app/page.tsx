@@ -34,7 +34,7 @@ export default async function Page({searchParams}: any) {
                     <FiltersForm filters={entities}/>
                 </div>
             </div>
-            {data.length && <InventoriesList inventories={data}/>}
+            {data.length ? <InventoriesList inventories={data}/> : null}
             <div className="advantages-2 content-area bg-grea-3">
                 <div className="container">
                     <div className="main-title">
