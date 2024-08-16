@@ -51,7 +51,7 @@ export default function InventoriesList({inventories}: InventoriesListProps) {
                                                 <i className="fi fi-rs-plan"></i> {inventory.Transmission}
                                             </li>
                                             <li>
-                                                <i className="fi fi-ss-calendar"></i> 2021
+                                                <i className="fi fi-ss-calendar"></i> {inventory.Year}
                                             </li>
                                             <li>
                                                 <i className="fi fi-sr-gas-pump-alt"></i> {inventory.TypeOfFuel}

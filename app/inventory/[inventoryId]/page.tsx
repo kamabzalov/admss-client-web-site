@@ -1,9 +1,7 @@
 import { API_HOST, API_KEY } from "@/app/app-config";
 import { Inventory } from "@/app/models/inventory";
 import Image from "next/image";
-import ImageCarousel from "@/app/components/ui/carousel";
 import AppTabs from "@/app/components/ui/tabs";
-
 
 export default async function Page(params: { params: { inventoryId: string } }) {
     const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
@@ -53,6 +51,9 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                     </li>
                                     <li>
                                         <span>Model</span>{inventoryData.Model}
+                                    </li>
+                                    <li>
+                                        <span>VIN</span>{inventoryData.VIN}
                                     </li>
                                     <li>
                                         <span>Body Style</span>{inventoryData.BodyStyle}
