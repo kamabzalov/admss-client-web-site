@@ -25,7 +25,7 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                         </div>
 
                                         <div className="pull-right">
-                                            <div className="price-box-3"><sup>$</sup>{inventoryData.Price}</div>
+                                            <div className="price-box-3"><sup>$</sup>{inventoryData.ListPrice}</div>
                                         </div>
                                     </div>
                                     {preview && <Image src={preview?.itemurl}

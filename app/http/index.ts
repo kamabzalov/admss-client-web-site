@@ -4,7 +4,7 @@ import { Base } from "@/app/models/base";
 
 export async function getInventories(filter?: string): Promise<Inventory[]> {
     const query = new URLSearchParams(filter).toString();
-    const response = await fetch(`${API_HOST}list/0?${query}`, {
+    const response = await fetch(`${API_HOST}list?${query}`, {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         }
