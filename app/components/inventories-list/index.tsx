@@ -30,7 +30,7 @@ export default function InventoriesList({inventories}: InventoriesListProps) {
                                         <Link
                                             className="car-img"
                                             href={`/inventory/${inventory.itemuid}`}>
-                                            <div className="price-box-2"><sup>$</sup>{inventory.Price}</div>
+                                            <div className="price-box-2"><sup>$</sup>{inventory.ListPrice}</div>
                                             {media &&
                                                 <Image width={415}
                                                        height={280}

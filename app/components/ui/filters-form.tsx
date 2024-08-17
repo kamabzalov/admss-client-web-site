@@ -1,13 +1,19 @@
 'use client';
 
 import { Base } from "@/app/models/base";
-import Slider from "rc-slider";
-import 'rc-slider/assets/index.css';
 import { ChangeEvent } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface FiltersFormProps {
     filters: Array<Base[]>;
+}
+
+const generatePricesSelect: (prices: Base[]) => Base[] = (prices: Base[]) => {
+    const result: Base[] = [];
+    for (let i = 1000; i <= +prices[1].name; i = i + 1000) {
+        result.push({idx: i, name: i.toString()})
+    }
+    return result;
 }
 
 export default function FiltersForm({filters}: FiltersFormProps) {
@@ -17,10 +23,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
     let locations: Base[] = [];
     let years: Base[] = [];
     let categories: Base[] = [];
-    let defaultMin = 0;
-    let defaultMax = 0;
-    let min = 0;
-    let max = 0;
+    const prices: Base[] = generatePricesSelect(filters[5]);
 
     let selectedFilters: any = {};
 
@@ -30,21 +33,11 @@ export default function FiltersForm({filters}: FiltersFormProps) {
         locations = filters[2];
         years = filters[3];
         categories = filters[4];
-        defaultMin = +filters[5][0]['name'];
-        defaultMax = +filters[5][1]['name'];
     }
 
     const pathname = usePathname();
     const {replace} = useRouter();
 
-    const setPriceFilter = (event: number | number[]) => {
-        console.log(event);
-        if (Array.isArray(event)) {
-            min = event[0];
-            max = event[1];
-        }
-        selectedFilters = {...selectedFilters, min, max};
-    }
 
     const setFilter = (event: ChangeEvent<HTMLSelectElement>, filterKey: string) => {
         if (event.target.value) {
@@ -123,12 +116,16 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         })}
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6 pt-2 pb-2">
-                    <Slider onChange={(event) => setPriceFilter(event)} range defaultValue={[defaultMin, defaultMax]} min={defaultMin} max={defaultMax}  />
-                    <div className="d-flex justify-content-between">
-                        <span>{defaultMin} USD</span>
-                        <span>{defaultMax} USD</span>
-                    </div>
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                    <select onChange={e => setFilter(e, 'ListPrice')} className="form-select form-select-lg"
+                            aria-label="Default select example">
+                        <option value=''>Select Price</option>
+                        {prices.map(item => {
+                            return (
+                                <option key={item.idx} value={item.name}>Up to {item.name} USD</option>
+                            )
+                        })}
+                    </select>
                 </div>
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                     <div className="form-group">
