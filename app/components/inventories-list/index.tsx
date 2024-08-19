@@ -34,6 +34,11 @@ export default function InventoriesList({inventories}: InventoriesListProps) {
                                             {media &&
                                                 <Image width={415}
                                                        height={280}
+                                                       sizes="100vw"
+                                                       style={{
+                                                           width: '100%',
+                                                           height: 'auto',
+                                                       }}
                                                        className="d-block w-100" src={media[0].itemurl_mini_preview}
                                                        alt={inventory.Model}/>}
                                         </Link>

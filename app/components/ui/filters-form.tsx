@@ -41,7 +41,17 @@ export default function FiltersForm({filters}: FiltersFormProps) {
 
     const setFilter = (event: ChangeEvent<HTMLSelectElement>, filterKey: string) => {
         if (event.target.value) {
-            selectedFilters[filterKey] = event.target.value;
+            switch (filterKey) {
+                case "ListPriceMin":
+                    selectedFilters['pricemin'] = event.target.value;
+                    break;
+                    case "ListPriceMax":
+                        selectedFilters['pricemax'] = event.target.value;
+                        break;
+                default:
+                    selectedFilters[filterKey] = event.target.value;
+                    break;
+            }
         } else {
             delete selectedFilters[filterKey];
         }
@@ -117,9 +127,20 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                     </select>
                 </div>
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                    <select onChange={e => setFilter(e, 'ListPrice')} className="form-select form-select-lg"
+                    <select onChange={e => setFilter(e, 'ListPriceMin')} className="form-select form-select-lg"
                             aria-label="Default select example">
-                        <option value=''>Select Price</option>
+                        <option value=''>Select Min Price</option>
+                        {prices.map(item => {
+                            return (
+                                <option key={item.idx} value={item.name}>From {item.name} USD</option>
+                            )
+                        })}
+                    </select>
+                </div>
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                    <select onChange={e => setFilter(e, 'ListPriceMax')} className="form-select form-select-lg"
+                            aria-label="Default select example">
+                        <option value=''>Select Max Price</option>
                         {prices.map(item => {
                             return (
                                 <option key={item.idx} value={item.name}>Up to {item.name} USD</option>
@@ -128,22 +149,16 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                     </select>
                 </div>
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div className="form-group">
-                        <button type="button" onClick={onSearchClick}
-                                className="btn w-100 button-theme btn-lg">
-                            <i className="fi fi-br-search"></i>
-                            Find
-                        </button>
-                    </div>
-                </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div className="form-group">
-                        <button type="reset" onClick={resetFilters}
-                                className="btn w-100 button-theme btn-lg">
-                            <i className="fi fi-br-search"></i>
-                            Reset
-                        </button>
-                    </div>
+                    <button type="reset" onClick={resetFilters}
+                            className="btn w-50 button-theme btn-lg">
+                        <i className="fi fi-br-search"></i>
+                        Reset
+                    </button>
+                    <button type="button" onClick={onSearchClick}
+                            className="btn w-50 mr-1 button-theme btn-lg">
+                        <i className="fi fi-br-search"></i>
+                        Find
+                    </button>
                 </div>
             </div>
         </form>
