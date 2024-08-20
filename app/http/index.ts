@@ -8,6 +8,7 @@ export async function getInventories(filter?: string): Promise<Inventory[]> {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
     });
     return await response.json();
 
@@ -18,6 +19,7 @@ export async function getAvailableBrands(): Promise<Base[]> {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
     });
     return await response.json();
 }
@@ -27,6 +29,7 @@ export async function getAvailableModels(): Promise<Base[]> {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
     });
     return await response.json();
 }
@@ -36,6 +39,7 @@ export async function getAvailableLocations(): Promise<Base[]> {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
     });
     return await response.json();
 }
@@ -45,6 +49,7 @@ export async function getAvailableYears(): Promise<Base[]> {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
     });
     return await response.json();
 }
@@ -54,6 +59,7 @@ export async function getAvailableCategories(): Promise<Base[]> {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
     });
     return await response.json();
 }
@@ -63,6 +69,7 @@ export async function getAvailablePrices(): Promise<Base[]> {
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
     });
     return await response.json();
 }
