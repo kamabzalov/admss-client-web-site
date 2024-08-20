@@ -12,6 +12,8 @@ import Link from "next/link";
 import InventoriesList from "@/app/components/inventories-list";
 import FiltersForm from "@/app/components/ui/filters-form";
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page({searchParams}: any) {
     let data: Inventory[] = await getInventories();
     const entities = await Promise.all([
