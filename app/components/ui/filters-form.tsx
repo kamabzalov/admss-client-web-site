@@ -129,23 +129,25 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                     <select onChange={e => setFilter(e, 'ListPriceMin')} className="form-select form-select-lg"
                             aria-label="Default select example">
-                        <option value=''>Min Price</option>
+                        <option value=''>Select Min Price</option>
                         {prices.map(item => {
                             return (
                                 <option key={item.idx} value={item.name}>{item.name} $</option>
                             )
                         })}
+                        <option value=''>Lowest</option>
                     </select>
                 </div>
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                     <select onChange={e => setFilter(e, 'ListPriceMax')} className="form-select form-select-lg"
                             aria-label="Default select example">
-                        <option value=''>Max Price</option>
+                        <option value=''>Select Max Price</option>
                         {prices.map(item => {
                             return (
                                 <option key={item.idx} value={item.name}>{item.name} $</option>
                             )
                         })}
+                        <option value=''>Highest</option>
                     </select>
                 </div>
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
