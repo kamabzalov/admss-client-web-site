@@ -73,3 +73,14 @@ export async function getAvailablePrices(): Promise<Base[]> {
     });
     return await response.json();
 }
+
+export async function getInventoryData(params: { params: { inventoryId: string } }): Promise<Inventory> {
+    const response = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        },
+        cache: "no-store"
+    })
+    return await response.json();
+}
+

@@ -1,17 +1,8 @@
-import { API_HOST, API_KEY } from "@/app/app-config";
-import { Inventory } from "@/app/models/inventory";
-import Image from "next/image";
-import AppTabs from "@/app/components/ui/tabs";
 import ImageCarousel from "@/app/components/ui/carousel";
+import { getInventoryData } from "@/app/http";
 
 export default async function Page(params: { params: { inventoryId: string } }) {
-    const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
-        headers: {
-            Authorization: `Basic ${API_KEY}`,
-        }
-    })
-    const inventoryData: Inventory = await getInventoryDataById.json();
-    const preview = inventoryData.media && inventoryData.media[0];
+    const inventoryData = await getInventoryData(params)
     return (
         <div className="car-details-page content-area-6">
             <div className="container">
@@ -29,7 +20,8 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                             <div className="price-box-3"><sup>$</sup>{inventoryData.ListPrice}</div>
                                         </div>
                                     </div>
-                                    <ImageCarousel images={inventoryData.media} caption={inventoryData.Make + ' ' + inventoryData.Model}/>
+                                    <ImageCarousel images={inventoryData.media}
+                                                   caption={inventoryData.Make + ' ' + inventoryData.Model}/>
                                 </div>
                             </div>
 
