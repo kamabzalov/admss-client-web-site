@@ -2,6 +2,7 @@ import { API_HOST, API_KEY } from "@/app/app-config";
 import { Inventory } from "@/app/models/inventory";
 import Image from "next/image";
 import AppTabs from "@/app/components/ui/tabs";
+import ImageCarousel from "@/app/components/ui/carousel";
 
 export default async function Page(params: { params: { inventoryId: string } }) {
     const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
@@ -28,22 +29,11 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                             <div className="price-box-3"><sup>$</sup>{inventoryData.ListPrice}</div>
                                         </div>
                                     </div>
-                                    {preview && <Image src={preview?.itemurl}
-                                                       className="d-block w-100"
-                                                       alt={inventoryData.Make + ' ' + inventoryData.Model}
-                                                       width={856} height={640}
-                                                       sizes="100vw"
-                                                       style={{
-                                                           width: '100%',
-                                                           height: 'auto',
-                                                       }}
-                                    />}
+                                    <ImageCarousel images={inventoryData.media} caption={inventoryData.Make + ' ' + inventoryData.Model}/>
                                 </div>
                             </div>
 
-                            <div className="tabbing tabbing-box mb-40">
-                                <AppTabs descriptionTab={inventoryData.Notes} images={inventoryData.media} caption={inventoryData.Make + ' ' + inventoryData.Model}/>
-                            </div>
+                            <p>{inventoryData.Notes}</p>
 
                         </div>
                     </div>
