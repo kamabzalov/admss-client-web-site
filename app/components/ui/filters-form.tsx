@@ -8,12 +8,11 @@ interface FiltersFormProps {
     filters: Array<Base[]>;
 }
 
-const generatePricesSelect: (prices: Base[]) => Base[] = (prices: Base[]) => {
-    const result: Base[] = [prices[0]];
-    for (let i = 1000; i <= +prices[1].name; i = i + 1000) {
+const generatePricesSelect: () => Base[] = () => {
+    const result: Base[] = [];
+    for (let i = 2000; i <= 50000; i = i + 1000) {
         result.push({idx: i, name: i.toString()})
     }
-    result.push(prices[1]);
     return result;
 }
 
@@ -24,7 +23,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
     let locations: Base[] = [];
     let years: Base[] = [];
     let categories: Base[] = [];
-    const prices: Base[] = generatePricesSelect(filters[5]);
+    const prices: Base[] = generatePricesSelect();
 
     let selectedFilters: any = {};
 
@@ -130,10 +129,10 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                     <select onChange={e => setFilter(e, 'ListPriceMin')} className="form-select form-select-lg"
                             aria-label="Default select example">
-                        <option value=''>Select Min Price</option>
+                        <option value=''>Min Price</option>
                         {prices.map(item => {
                             return (
-                                <option key={item.idx} value={item.name}>From {item.name} USD</option>
+                                <option key={item.idx} value={item.name}>{item.name} $</option>
                             )
                         })}
                     </select>
@@ -141,10 +140,10 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
                     <select onChange={e => setFilter(e, 'ListPriceMax')} className="form-select form-select-lg"
                             aria-label="Default select example">
-                        <option value=''>Select Max Price</option>
+                        <option value=''>Max Price</option>
                         {prices.map(item => {
                             return (
-                                <option key={item.idx} value={item.name}>Up to {item.name} USD</option>
+                                <option key={item.idx} value={item.name}>{item.name} $</option>
                             )
                         })}
                     </select>
