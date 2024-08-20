@@ -9,10 +9,11 @@ interface FiltersFormProps {
 }
 
 const generatePricesSelect: (prices: Base[]) => Base[] = (prices: Base[]) => {
-    const result: Base[] = [];
+    const result: Base[] = [prices[0]];
     for (let i = 1000; i <= +prices[1].name; i = i + 1000) {
         result.push({idx: i, name: i.toString()})
     }
+    result.push(prices[1]);
     return result;
 }
 

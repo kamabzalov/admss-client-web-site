@@ -3,8 +3,6 @@ import { Inventory } from "@/app/models/inventory";
 import Image from "next/image";
 import AppTabs from "@/app/components/ui/tabs";
 
-export const dynamic = 'force-dynamic'
-
 export default async function Page(params: { params: { inventoryId: string } }) {
     const getInventoryDataById = await fetch(`${API_HOST}item/${params.params.inventoryId}`, {
         headers: {

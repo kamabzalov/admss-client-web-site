@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     description: "Adms inventory list site",
 };
 
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
