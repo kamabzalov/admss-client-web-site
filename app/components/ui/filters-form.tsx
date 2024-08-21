@@ -72,7 +72,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
     return (
         <form>
             <div className="row">
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <select onChange={e => setFilter(e, 'make')} className="form-select form-select-lg"
                             aria-label="Default select example">
                         <option value=''>Select Make</option>
@@ -83,7 +83,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         })}
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <select onChange={e => setFilter(e, 'model')} className="form-select form-select-lg"
                             aria-label="Default select example">
                         <option value=''>Select Model</option>
@@ -94,7 +94,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         })}
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <select onChange={e => setFilter(e, 'location')} className="form-select form-select-lg"
                             aria-label="Default select example">
                         <option value=''>Select Location</option>
@@ -105,7 +105,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         })}
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <select onChange={e => setFilter(e, 'year')} className="form-select form-select-lg"
                             aria-label="Default select example">
                         <option value=''>Select Year</option>
@@ -116,7 +116,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         })}
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <select onChange={e => setFilter(e, 'category')} className="form-select form-select-lg"
                             aria-label="Default select example">
                         <option value=''>Select Category</option>
@@ -127,7 +127,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         })}
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <select onChange={e => setFilter(e, 'ListPriceMin')} className="form-select form-select-lg"
                             aria-label="Default select example">
                         <option value=''>Select Min Price</option>
@@ -139,7 +139,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         <option value='min'>Lowest</option>
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <select onChange={e => setFilter(e, 'ListPriceMax')} className="form-select form-select-lg"
                             aria-label="Default select example">
                         <option value=''>Select Max Price</option>
@@ -151,7 +151,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                         <option value='max'>Highest</option>
                     </select>
                 </div>
-                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
+                <div className="form-group col-lg-3 col-md-6 col-sm-6 col-12">
                     <button type="reset" onClick={resetFilters}
                             className="btn w-50 button-theme btn-lg">
                         <i className="fi fi-br-search"></i>
