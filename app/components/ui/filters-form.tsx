@@ -40,6 +40,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
 
 
     const setFilter = (event: ChangeEvent<HTMLSelectElement>, filterKey: string) => {
+        console.log(event.target.value)
         if (event.target.value) {
             switch (filterKey) {
                 case "ListPriceMin":
@@ -135,7 +136,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                                 <option key={item.idx} value={item.name}>{item.name} $</option>
                             )
                         })}
-                        <option value=''>Lowest</option>
+                        <option value='min'>Lowest</option>
                     </select>
                 </div>
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
@@ -147,7 +148,7 @@ export default function FiltersForm({filters}: FiltersFormProps) {
                                 <option key={item.idx} value={item.name}>{item.name} $</option>
                             )
                         })}
-                        <option value=''>Highest</option>
+                        <option value='max'>Highest</option>
                     </select>
                 </div>
                 <div className="form-group col-lg-3 col-md-6 col-sm-6 col-6">
