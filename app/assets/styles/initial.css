@@ -1000,6 +1000,8 @@
 
     #main-header-4 {
         top: 0;
+        display: flex;
+        height: 80px;
     }
 
     #top-header-2{
