@@ -31,7 +31,7 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                     </div>
                     <div className="col-lg-4 col-md-12">
                         <div className="sidebar-right">
-                            <div className="widget advanced-search d-none d-xl-block d-lg-block">
+                            <div className="widget advanced-search">
                                 <h3 className="sidebar-title">Booking This Car</h3>
                                 <ul>
                                     <li>
