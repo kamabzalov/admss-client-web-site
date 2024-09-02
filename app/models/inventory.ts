@@ -48,6 +48,7 @@ export interface Inventory {
     itemuid: string;
     mileage: number;
     name: string;
+    logo: string;
     options_codes: string[];
     options_info: string[];
     updated: Date;

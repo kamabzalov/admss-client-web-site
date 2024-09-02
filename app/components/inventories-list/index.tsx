@@ -44,7 +44,13 @@ export default function InventoriesList({inventories}: InventoriesListProps) {
                                         </Link>
                                     </div>
                                     <div className="detail">
-                                        <h1 className="title">
+                                        <h1 className="title d-flex align-items-center">
+                                            <Image width={25}
+                                                   height={25}
+                                                   className="me-2"
+                                                   src={inventory.logo}
+                                                   title={inventory.Make}
+                                                   alt={inventory.Make}/>
                                             <Link
                                                 href={`/inventory/${inventory.itemuid}`}>{inventory.Make} {inventory.Model}</Link>
                                         </h1>
