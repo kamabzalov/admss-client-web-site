@@ -17,7 +17,7 @@ export default function Header() {
                 <div className="main-header sticky-header header-with-top" id="main-header-4">
                     <nav className="navbar navbar-expand-lg navbar-light">
                         <div className="header-left">
-                            <Link href="/">Admss</Link>
+                            <Link href="/">Auto XV (Sample site)</Link>
                         </div>
                         <button className="navbar-toggler" id="drawer" type="button">
                             <span className="fa fa-bars"></span>
