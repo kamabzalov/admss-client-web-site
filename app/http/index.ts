@@ -1,6 +1,7 @@
 import { Inventory } from "@/app/models/inventory";
 import { API_HOST, API_KEY } from "@/app/app-config";
 import { Base } from "@/app/models/base";
+import { Contact } from "@/app/models/contact";
 
 export async function getInventories(filter?: string): Promise<Inventory[]> {
     const query = new URLSearchParams(filter).toString();
@@ -79,6 +80,18 @@ export async function getInventoryData(params: { params: { inventoryId: string }
         headers: {
             Authorization: `Basic ${API_KEY}`,
         },
+        cache: "no-store"
+    })
+    return await response.json();
+}
+
+export async function sendContactForm(params: Contact) {
+    const response = await fetch(`${API_HOST}${API_KEY}/message`, {
+        headers: {
+            Authorization: `Basic ${API_KEY}`,
+        },
+        method: 'POST',
+        body: JSON.stringify(params),
         cache: "no-store"
     })
     return await response.json();

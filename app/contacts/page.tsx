@@ -1,3 +1,5 @@
+import ContactForm from "@/app/components/ui/contact-form";
+
 export default function Page() {
     return (
         <div className="contact-1 content-area-5">
@@ -17,46 +19,7 @@ export default function Page() {
                         <div className="col-lg-7 col-md-12 col-sm-12 col-pad2">
                             <div className="contact-form contact-pad">
                                 <h3>Send us a Message</h3>
-                                <form>
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <div className="form-group name">
-                                                <input type="text" name="name" className="form-control"
-                                                       placeholder="Name" aria-label="Full Name"/>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group email">
-                                                <input type="email" name="email" className="form-control"
-                                                       placeholder="Email Address" aria-label="Email Address"/>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group subject">
-                                                <input type="text" name="subject" className="form-control"
-                                                       placeholder="Subject" aria-label="Subject"/>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group number">
-                                                <input type="text" name="phone" className="form-control"
-                                                       placeholder="Phone" aria-label="Phone Number"/>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="form-group message">
-                                                <textarea className="form-control" name="message"
-                                                          placeholder="Write message"
-                                                          aria-label="Write message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="send-btn text-center">
-                                                <button type="submit" className="btn-6">Send Message</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                <ContactForm/>
                             </div>
                         </div>
                         <div className="col-lg-5 col-md-12 col-sm-12 col-pad2">
