@@ -21,8 +21,7 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                                             <div className="price-box-3"><sup>$</sup>{inventoryData.ListPrice}</div>
                                         </div>
                                     </div>
-                                    <ImageCarousel images={inventoryData.media}
-                                                   caption={inventoryData.Make + ' ' + inventoryData.Model}/>
+                                    <ImageCarousel images={inventoryData.media}/>
                                 </div>
                             </div>
 

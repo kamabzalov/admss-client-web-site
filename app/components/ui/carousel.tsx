@@ -18,9 +18,6 @@ export default function ImageCarousel({images, caption}: ImageCarouselProps) {
                            width: '100%',
                            height: 'auto',
                        }}/>
-                <Carousel.Caption>
-                    <h5>{caption}</h5>
-                </Carousel.Caption>
             </Carousel.Item>
     )
     return (
