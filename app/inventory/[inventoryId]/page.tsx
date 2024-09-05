@@ -28,7 +28,7 @@ export default async function Page(params: { params: { inventoryId: string } }) 
                             <p>{inventoryData.Notes}</p>
 
 
-                            <InventoryActions/>
+                            <InventoryActions carName={inventoryData.Make + inventoryData.Model}/>
 
                         </div>
                     </div>
