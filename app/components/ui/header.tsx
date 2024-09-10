@@ -1,4 +1,9 @@
+'use client';
+
 import Link from "next/link";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 export default function Header() {
     return (
@@ -14,14 +19,11 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <div className="main-header sticky-header header-with-top" id="main-header-4">
+                <div className="main-header sticky-header header-with-top d-lg-block d-none" id="main-header-4">
                     <nav className="navbar navbar-expand-lg navbar-light">
                         <div className="header-left">
                             <Link href="/">Auto XV (Sample site)</Link>
                         </div>
-                        <button className="navbar-toggler" id="drawer" type="button">
-                            <span className="fa fa-bars"></span>
-                        </button>
                         <div className="header-centar">
                             <div className="navbar-collapse collapse" id="navbar">
                                 <ul className="navbar-nav">
@@ -52,11 +54,17 @@ export default function Header() {
                 </div>
             </header>
             <header className="main-header sticky-header header-with-top" id="main-header-4">
-                <nav className="navbar navbar-expand-lg navbar-light">
-                    <div className="header-left">
-                        <Link href="/">Auto XV (Sample site)</Link>
-                    </div>
-                </nav>
+                <Navbar collapseOnSelect expand="lg" className="navbar">
+                    <Container>
+                        <Navbar.Brand href="/">Auto XV (Sample site)</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="me-auto">
+                                <Nav.Link href="/contacts">Contacts</Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
             </header>
         </>
     )
