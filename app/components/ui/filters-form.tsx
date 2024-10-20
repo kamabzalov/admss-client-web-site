@@ -40,7 +40,6 @@ export default function FiltersForm({filters}: FiltersFormProps) {
 
 
     const setFilter = (event: ChangeEvent<HTMLSelectElement>, filterKey: string) => {
-        console.log(event.target.value)
         if (event.target.value) {
             switch (filterKey) {
                 case "ListPriceMin":

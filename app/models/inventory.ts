@@ -26,6 +26,7 @@ export interface Inventory {
     LastExportDate: Date;
     LastModifiedDate: string;
     ListPrice: number;
+    locationname: string;
     Make: string;
     Model: string;
     ModelCode: string;

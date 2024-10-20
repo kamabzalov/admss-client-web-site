@@ -38,6 +38,28 @@ export default async function Page({searchParams}: any) {
             <div className="advantages-2 content-area bg-grea-3">
                 <div className="container">
                     <div className="main-title">
+                        <h1 className="mb-10">Make the order</h1>
+                        <div className="title-border">
+                            <div className="title-border-inner"></div>
+                            <div className="title-border-inner"></div>
+                            <div className="title-border-inner"></div>
+                            <div className="title-border-inner"></div>
+                            <div className="title-border-inner"></div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104710.50765498672!2d33.5378337094314!3d34.90134569505271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e082a16c40cb13%3A0x4fcbf0221371d0a5!2z0JvQsNGA0L3QsNC60LAsINCa0LjQv9GA!5e0!3m2!1sru!2s!4v1729349145275!5m2!1sru!2s"
+                                width="100%" height="450" allowFullScreen="true" loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="advantages-2 content-area bg-grea-3">
+                <div className="container">
+                    <div className="main-title">
                         <h1 className="mb-10">Our Advantages</h1>
                         <div className="title-border">
                             <div className="title-border-inner"></div>

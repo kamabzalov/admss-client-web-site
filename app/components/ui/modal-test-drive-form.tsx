@@ -41,7 +41,6 @@ export function ModalTestDriveForm({carName}: ModalTestDriveFormProps) {
             message: testDriveForm.message,
             topic: `Test drive request for ${carName}`
         }
-        console.log(contactData);
         const response = await fetch('/api/test-drive', {
             method: 'POST',
             body: JSON.stringify(contactData),

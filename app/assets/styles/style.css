@@ -2743,7 +2743,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .car-box-3 .detail {
-    padding: 30px 25px 20px;
+    padding: 30px 20px 20px;
 }
 
 .car-box-3 .detail .title {
@@ -2759,7 +2759,7 @@ input[type=checkbox]:checked + label:before {
 .car-box-3 .facilities-list li {
     list-style: none;
     display: inline-flex;
-    width: 33.33%;
+    width: 25%;
     font-weight: 400;
     margin-bottom: 10px;
     font-size: 14px;

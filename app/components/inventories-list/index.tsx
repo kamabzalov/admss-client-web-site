@@ -56,13 +56,16 @@ export default function InventoriesList({inventories}: InventoriesListProps) {
                                         </h1>
                                         <ul className="facilities-list">
                                             <li>
-                                                <i className="fi fi-sr-road"></i> {inventory.mileage}&nbsp;miles
+                                                <i className="fi fi-sr-road"></i> {inventory.mileage}&nbsp;mi
                                             </li>
                                             <li>
                                                 <i className="fi fi-rs-plan"></i> {inventory.Transmission}
                                             </li>
                                             <li>
                                                 <i className="fi fi-ss-calendar"></i> {inventory.Year}
+                                            </li>
+                                            <li>
+                                                <i className="fi fi-ss-car"></i> {inventory.StockNo}
                                             </li>
                                             <li>
                                                 <i className="fi fi-sr-gas-pump-alt"></i> {inventory.TypeOfFuel}
